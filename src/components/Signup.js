@@ -15,7 +15,7 @@ class Signup extends React.Component {
             const data = new FormData(event.target);
             const email = document.forms["SignUp"]["EMAIL"].value;
           
-            if (email != '') {
+            if (email !== '') {
                 fetch('https://ethergames.us12.list-manage.com/subscribe/post?u=619ab88092ca6b350e3234e44&amp;id=9fcdb4f337', {
                 method: 'POST',
                 body: data,
