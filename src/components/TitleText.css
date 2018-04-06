@@ -1,0 +1,25 @@
+.title-text {
+        width: 100%;
+        font-family: Lato;
+        font-size: 58px;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.08;
+        letter-spacing: normal;
+        text-align: center;
+        color: #d3dadf; 
+        margin: auto;
+        margin-top: 50px;
+}
+
+
+
+@media only screen and (max-width: 780px)
+   { 
+        .title-text {
+                font-size: 30px !important;
+                width: 80%;
+                margin-top: 25px;
+        }
+
+}

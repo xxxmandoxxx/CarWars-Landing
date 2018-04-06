@@ -1,0 +1,20 @@
+.socialbar {
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 125px;
+}
+
+.socialbar img {
+    height: 24px;
+    border: solid 1px #d3dadf;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 780px) { 
+    .socialbar { 
+        float: right;
+        margin: auto;
+        padding-right: 15px;
+    }
+}

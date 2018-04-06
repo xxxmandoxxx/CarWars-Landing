@@ -1,0 +1,22 @@
+.thankyou-container {
+    margin-top: 50px;
+}
+
+.thankyou-container img {
+ 
+    border: solid 1px #d3dadf;
+    border-radius: 25px;
+    margin-right: 15px;
+}
+
+.thankyou-text {
+    color: #56a2fd;
+}
+
+.thankyou-text .title {
+    font-size: 38px;
+}
+
+.thankyou-text {
+    font-size: 18px;
+}
