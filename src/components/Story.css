@@ -24,7 +24,26 @@
 }
 
 @media only screen and (max-width: 780px) {
-    .StoryContent { max-height: 350px;
+    .StoryContent { 
+    max-height: 350px;
     overflow: scroll;
-    width: 80%;}
+    width: 80%;
+    margin-top: 35px;}
+
+    .StoryButton {
+        margin-top: 15px;
+        color: rgb(255, 255, 255);}
+
+    .StoryClick span { 
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 5px;
+        border-radius: 5px;
+    }
 }
+
+@media only screen and (max-height: 620px) {
+    .StoryContent { 
+        max-height: 300px;
+        margin-top: 15px;}
+}
+
