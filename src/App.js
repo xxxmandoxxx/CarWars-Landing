@@ -14,10 +14,18 @@ ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends Component {
   
-   state = {is_registered: false};
+   state = {
+     is_registered: false,
+     showStory: false
+  };
   
   regDone() {
     this.setState({is_registered: true});
+  }
+
+  triggerStoryHandler = () => {
+    const currentState = this.state.showStory;
+    this.setState({showStory: !currentState})
   }
 
   render() {
@@ -25,7 +33,7 @@ class App extends Component {
     if (this.state.is_registered === true) {
        view = <ThankYou />
     } else {
-       view = <Main regDone={this.regDone.bind(this)} />
+       view = <Main regDone={this.regDone.bind(this)} showStory={this.state.showStory} triggerStory={this.triggerStoryHandler} />
     }
 
     return (

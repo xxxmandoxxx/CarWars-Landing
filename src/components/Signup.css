@@ -64,6 +64,11 @@
     display: none;
 }
 
+.StoryClick {
+    color: #aaafb3;
+    cursor: pointer;
+}
+
 
 @media only screen and (max-width: 780px)
    {  

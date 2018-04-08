@@ -53,6 +53,7 @@ class Signup extends React.Component {
                     </div>
                 </form>
             </div>
+            <p className="StoryClick" onClick={() => this.props.triggerStory()}>Need a little more info?</p>
         </div>
     )
 }}
