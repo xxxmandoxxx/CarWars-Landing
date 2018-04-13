@@ -1,0 +1,30 @@
+nav {
+    position: fixed;
+    z-index: 1000;
+    right: 0;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.nav-item { 
+    display: inline-block; 
+    margin-right: 10px;
+    padding: 5px;
+   
+} 
+
+.nav-item > a { 
+    color: #d3dadf;
+    text-decoration: none;
+    padding-bottom: 2px;
+    
+} 
+
+
+.nav-active {
+    border-bottom: solid 1px #56a2fd;
+}
+
+.nav-item:hover > a{
+    color: #56a2fd;
+}

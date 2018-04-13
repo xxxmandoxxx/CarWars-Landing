@@ -1,0 +1,19 @@
+.AboutBackdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(100,100,100,0.5);
+    z-index: 100;
+
+}
+
+.AboutContent {
+    color: azure;
+    width: 60%;
+    margin: auto;
+    margin-top: 15%;
+
+}
+
