@@ -27,6 +27,10 @@
     font-size: 8pt;
  }
 
+ .fotter-text-mobile {
+    display: none;
+ }
+
  .no-style {
     text-decoration: none;
     color: inherit;
@@ -35,19 +39,33 @@
 
  @media only screen and (max-width: 780px)
    {  
-    .footer-text { text-align: left;
-    margin-left: 5px; margin-bottom: 5px;}
+    .footer-text { 
+        text-align: left;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        display: none;}
+    
+    .fotter-text-mobile {
+        display: inline-block;
+        text-align: left;
+        margin-left: 15px;
+        color: #7f7f80;
+        font-size: 8pt;
+        float: left;
+        margin-top: 10px;
+    }
+        
     .ether-logo {
         height: 80px;
         margin-left: 5px;
      }
      .footer { 
-         height: 195px;
+         height: 120px;
          padding-right: 0px;
      }
 
      .footer-social {
-       
+        float: right;
         width: 100%;
     }
 

@@ -36,7 +36,7 @@ class Signup extends React.Component {
                         <div>
                             <div className="outer-wrapper">
                                 <div className="email-wrapper">
-                                    <input autoFocus type="email" name="EMAIL" className="required email" id="mce-EMAIL" placeholder="Enter your email here" autoComplete="off" minLength="3" maxLength="64"/>
+                                    <input autoFocus type="email" name="EMAIL" className="required email" id="mce-EMAIL" placeholder="@ Email" autoComplete="off" minLength="3" maxLength="64"/>
                                 </div>
                                 <div className="button-wrapper">
                                     <button type="submit"  name="subscribe" id="mc-embedded-subscribe" className="email-button"></button>

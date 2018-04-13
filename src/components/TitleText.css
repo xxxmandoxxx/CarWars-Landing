@@ -1,4 +1,4 @@
-.title-text {
+.title-text h1 {
         width: 100%;
         font-family: Lato;
         font-size: 58px;
@@ -16,7 +16,7 @@
 
 @media only screen and (max-width: 780px)
    { 
-        .title-text {
+        .title-text h1 {
                 font-size: 30px !important;
                 width: 80%;
                 margin-top: 25px;

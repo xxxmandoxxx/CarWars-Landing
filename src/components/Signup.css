@@ -77,6 +77,8 @@
    {  
     .email-button {
             margin-top: 25px;
+            width: 64px;
+            height: 64px;
     }
 
     .email {
@@ -89,7 +91,6 @@
     }
 
     .email-wrapper {
-        display: block;
         vertical-align: middle;
     
     }
