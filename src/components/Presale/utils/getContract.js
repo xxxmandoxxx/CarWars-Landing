@@ -6,6 +6,9 @@ const RINKEBY = "4";
 const ROPSTEN = "3";
 const LOCAL = "5777"
 
+const USEDNETWORK = LOCAL
+const ADDRESS = "0x70c66ee495fEa2Ff282afFaCbd017D080114eE21"
+
 
 const getContract = async (web3) => {
   //const contract = initContract(contractDefinition)
@@ -14,10 +17,10 @@ const getContract = async (web3) => {
   const contract = initContract({
     abi,
     networks: {
-      [LOCAL]: {
+      [USEDNETWORK]: {
         events: {},
         links: {},
-        address: "0x70c66ee495fEa2Ff282afFaCbd017D080114eE21"
+        address: ADDRESS
       }
     },
   })
@@ -34,9 +37,18 @@ const getContract = async (web3) => {
       )
     }
   }
-
-  const instance = await contract.at("0x70c66ee495fEa2Ff282afFaCbd017D080114eE21")
-  return instance
+  
+  return(web3.eth.net.getId()
+  .then(async (id) => {
+    if (id == USEDNETWORK) {
+      const instance = await contract.at(ADDRESS)
+      return instance
+    } else {
+      return null
+    }
+  }).catch(() => {
+    return null}))
 }
+
 
 export default getContract
