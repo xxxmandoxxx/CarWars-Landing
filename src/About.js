@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import './About.css';
 import Footer from './components/Footer';
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-116684519-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 class About extends Component {
 
     render () {

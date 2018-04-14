@@ -1,20 +1,43 @@
-export function buyPackage(event) {
+export function buyPackageUpTo(event) {
     event.preventDefault();
-   
+
     const data = new FormData(event.target)
     const ethAmount = data.get('ethAmount');
+    const upTo = data.get('upTo');
 
-    if (ethAmount > 0) {
-    this.setState({loading: true});
-    this.props.contract.purchasePackagesUpto(25, 
-        {from: this.props.accounts[0], gas: 300000, value: this.props.web3.utils.toWei(ethAmount, "ether")})
-        .then(async (res)  =>  {
-            console.log(res.tx);
-            this.setState({loading: true})
-        }).catch((error) => {
-            console.log(error);
-            this.setState({loading: false})
-        });
+    console.log(ethAmount + '-' + upTo);
+
+    if (ethAmount > 0 && upTo > 0) {
+        this.setState({loading: true});
+        this.props.contract.purchasePackagesUpto(upTo, 
+            {from: this.state.account, gas: 300000, value: this.state.web3.utils.toWei(ethAmount, "ether")})
+            .then(async (res)  =>  {
+                console.log(res.tx);
+                this.setState({loading: true})
+            }).catch((error) => {
+                console.log(error);
+                this.setState({loading: false})
+            });
     } 
 }
+
+export async function setCurrentPrice() {
+   const price = await this.props.contract.nextPrice();
+   this.setState({currentPrice: this.state.web3.utils.fromWei(price.toString(), 'ether')});
+}
+
+export async function packagesOwned() {
+
+    const pOwned = await this.props.contract.packagesOwned(this.state.account);
+    if (pOwned.toNumber() != this.state.pkgOwned) {
+        if (pOwned.toNumber() < 25) {
+            console.log('tt');
+            this.setState({pkgOwned: pOwned.toNumber(), pkgLimit: false});
+        } else {
+            console.log('ff');
+            this.setState({pkgOwned: pOwned.toNumber(), pkgLimit: true});
+        }
+    }
+ }
+
 
