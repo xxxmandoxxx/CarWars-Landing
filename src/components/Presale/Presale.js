@@ -24,7 +24,8 @@ class Presale extends Component {
             currentPrice: 0,
             pkgLimit: false,
             loading: false,
-            pkgOwned: 0
+            pkgOwned: 0,
+            txHash: null,
         }
 
         const PurchaseEvent = this.props.contract.Purchased();
@@ -49,9 +50,10 @@ class Presale extends Component {
 
     purchaseEventHandler = (result) => {
         this.setCurrentPrice();
-        this.showPurchesTicker(result)
-        if (this.state.account == result.address) {
-            this.setState({loading: false})
+        //this.showPurchesTicker(result)
+        console.log(result);
+        if (this.state.txHash == result.transactionHash) {
+            this.setState({loading: false, txHash: null})
         }
     }
 

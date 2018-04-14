@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PresaleLoading from './PresaleLoading';
 
 class PresaleForm extends Component {
 
@@ -13,7 +14,7 @@ class PresaleForm extends Component {
             return(
                 <div className="PresaleForm">
                     <div className='container'>
-                        loading...
+                        <PresaleLoading txHash={this.props.txHash} />
                     </div>
                 </div>
             )
@@ -22,7 +23,8 @@ class PresaleForm extends Component {
         return (
             <div className="PresaleForm">
                 <div className='container'>
-                    {this.props.account}
+                    {this.props.account}<br />
+                    {this.props.currentPrice}
                     {this.props.pkgOwned}
                     <form onSubmit={this.formSubmitHandler} className="PresaleForm-form">
                         <input type='number' min='0' max='10' step="any" name="ethAmount"/>

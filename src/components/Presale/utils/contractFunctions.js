@@ -8,12 +8,12 @@ export function buyPackageUpTo(event) {
     console.log(ethAmount + '-' + upTo);
 
     if (ethAmount > 0 && upTo > 0) {
-        this.setState({loading: true});
+        this.setState({loading: true, txHash: null});
         this.props.contract.purchasePackagesUpto(upTo, 
             {from: this.state.account, gas: 300000, value: this.state.web3.utils.toWei(ethAmount, "ether")})
             .then(async (res)  =>  {
                 console.log(res.tx);
-                this.setState({loading: true})
+                this.setState({loading: true, txHash: res.tx})
             }).catch((error) => {
                 console.log(error);
                 this.setState({loading: false})
