@@ -1,20 +1,33 @@
 import React from 'react';
 
+import loadingGif from '../img/loading.gif';
+
 const presaleLoading = (props) => {
 
 
     if (props.txHash) {
         return(
-            <div>
-                Transaction sent! <br />
-                Waiting for transactio to be confirmed:<br />
-                {props.txHash}
+            <div className="text-center animated fadeIn">
+                <div className="animated slideInUp loadingMessage">
+                    Transaction sent! <br />
+                    Waiting for transactio to be confirmed:<br />
+                    <a href={"https://etherscan.io/tx/" + props.txHash} className="white" target="_blank" rel="noopener noreferrer" >Tx on Etherscan</a>
+                </div>
+                <div className="loading-image-container">
+                    <img src={loadingGif} width="150px" />
+                </div>
+            
             </div>
         )
     } else {
         return(
-            <div>
-                Waiting for user to send transaction...
+            <div className="text-center animated fadeIn">
+                <div className="animated slideInUp loadingMessage">
+                    Waiting for user to send transaction...
+                </div>
+                <div className="loading-image-container">
+                    <img src={loadingGif} width="150px" />
+                </div>
             </div>
         )
     }

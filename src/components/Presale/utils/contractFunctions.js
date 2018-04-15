@@ -31,10 +31,10 @@ export async function packagesOwned() {
     const pOwned = await this.props.contract.packagesOwned(this.state.account);
     if (pOwned.toNumber() != this.state.pkgOwned) {
         if (pOwned.toNumber() < 25) {
-            console.log('tt');
+         
             this.setState({pkgOwned: pOwned.toNumber(), pkgLimit: false});
         } else {
-            console.log('ff');
+            
             this.setState({pkgOwned: pOwned.toNumber(), pkgLimit: true});
         }
     }

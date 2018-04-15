@@ -7,6 +7,10 @@
   display: none;
 }
 
+.white {
+  color: #d3dadf;
+}
+
 body {
   background: url('/img/background-image.png') no-repeat center center fixed;
   -webkit-background-size: cover;

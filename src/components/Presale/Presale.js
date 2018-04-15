@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import UnlockAccount from './Components/UnlockAccount';
 import PresaleForm from './Components/PresaleForm';
+import Web3ErrorWrapper from './utils/Web3ErrorWrapper';
 
 import { buyPackageUpTo, setCurrentPrice, packagesOwned } from './utils/contractFunctions';
 
@@ -51,8 +52,8 @@ class Presale extends Component {
     purchaseEventHandler = (result) => {
         this.setCurrentPrice();
         //this.showPurchesTicker(result)
-        console.log(result);
         if (this.state.txHash == result.transactionHash) {
+            this.packagesOwned()
             this.setState({loading: false, txHash: null})
         }
     }
@@ -79,14 +80,14 @@ class Presale extends Component {
         //Checking if contract found - if not wrong network
         if (!this.state.isMainNet) {
             return (
-                <div>
+                <Web3ErrorWrapper>
                     Please switch to mainnet.
-                </div>
+                </Web3ErrorWrapper>
             )
         }
 
         if (this.state.account == null) {
-            return <UnlockAccount />
+            return <Web3ErrorWrapper><UnlockAccount /></Web3ErrorWrapper>
         } else {
             return <PresaleForm {...this.state} 
             buyPackageUpTo={buyPackageUpTo.bind(this)} 

@@ -3,7 +3,7 @@ import React from 'react';
 const loading = (props) => {
     return(
         <div>
-            Loading Web3 (MetaMask)...
+            <h1>Loading Web3 (MetaMask)...</h1>
         </div>
     )
 };
