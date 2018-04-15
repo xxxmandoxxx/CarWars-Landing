@@ -3,6 +3,7 @@ import PresaleLoading from './PresaleLoading';
 import Slider from 'react-rangeslider';
 import PresalePanelWrapper from '../utils/PresalePanelWrapper';
 
+
 import 'react-rangeslider/lib/index.css';
 import './PresaleForm.css';
 import '../utils/Toggle.css';
@@ -14,7 +15,7 @@ class PresaleForm extends Component {
 
         this.state = {
             pkgAmount: 1,
-            multiplier: 1
+            multiplier: 1,
         }
     }
 
@@ -39,6 +40,7 @@ class PresaleForm extends Component {
     }
 
     render() {
+
         
         if (this.props.loading) {
             return(
@@ -53,7 +55,7 @@ class PresaleForm extends Component {
                 <h4 className="pkg-title">You currently own: {this.props.pkgOwned} Pkgs <br /></h4>
                 Current Package Price: {(this.props.currentPrice)} <br />
             
-                <Slider min={1} max={25} onChange={this.handleSliderOnChange} value={this.state.pkgAmount} />
+                <Slider min={1} max={this.props.pkgAllowed} onChange={this.handleSliderOnChange} value={this.state.pkgAmount} />
                 Packages: {this.state.pkgAmount}<br />
                 
                 <form onSubmit={this.formSubmitHandler} className="PresaleForm-form">

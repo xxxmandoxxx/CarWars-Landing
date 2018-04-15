@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import UnlockAccount from './Components/UnlockAccount';
 import PresaleForm from './Components/PresaleForm';
 import Web3ErrorWrapper from './utils/Web3ErrorWrapper';
+import { ToastContainer } from "react-toastr";
 
 import { buyPackageUpTo, setCurrentPrice, packagesOwned } from './utils/contractFunctions';
 
@@ -17,6 +18,7 @@ class Presale extends Component {
         this.intervalID = 0;
         this.setCurrentPrice = setCurrentPrice.bind(this);
         this.packagesOwned = packagesOwned.bind(this);
+        this.container = null;
 
         this.state = {
             isMainNet: (this.props.contract != null),
@@ -27,6 +29,7 @@ class Presale extends Component {
             loading: false,
             pkgOwned: 0,
             txHash: null,
+            pkgAllowed: 25
         }
 
         const PurchaseEvent = this.props.contract.Purchased();
@@ -50,8 +53,9 @@ class Presale extends Component {
     }
 
     purchaseEventHandler = (result) => {
+        console.log("Purchase Event");
         this.setCurrentPrice();
-        //this.showPurchesTicker(result)
+        this.showPurchesTicker(result);
         if (this.state.txHash == result.transactionHash) {
             this.packagesOwned()
             this.setState({loading: false, txHash: null})
@@ -59,7 +63,14 @@ class Presale extends Component {
     }
 
     showPurchesTicker = (result) => {
-
+        if (this.container != null) {
+        this.container.info(
+            <strong>A user just bought some packages</strong>,
+            <em>{result.transactionHash.substring(0,20)+"..."}</em>,{
+                showAnimation: 'animated bounceInUp',
+                hideAnimation: 'animated bounceOutDown'
+              }
+          );}
     }
 
     checkAccountChangedHandler = () => {
@@ -76,7 +87,7 @@ class Presale extends Component {
     }
 
     render() {
-
+       
         //Checking if contract found - if not wrong network
         if (!this.state.isMainNet) {
             return (
@@ -89,9 +100,16 @@ class Presale extends Component {
         if (this.state.account == null) {
             return <Web3ErrorWrapper><UnlockAccount /></Web3ErrorWrapper>
         } else {
-            return <PresaleForm {...this.state} 
-            buyPackageUpTo={buyPackageUpTo.bind(this)} 
-            packagesOwned={this.packagesOwned.bind(this)}/>
+            return (
+            <div>
+                 <ToastContainer
+                    ref={ref => this.container = ref}
+                    className="toast-bottom-right"/>
+
+                <PresaleForm {...this.state} 
+                buyPackageUpTo={buyPackageUpTo.bind(this)} 
+                packagesOwned={this.packagesOwned.bind(this)}/>
+            </div>)
         }
         
     }

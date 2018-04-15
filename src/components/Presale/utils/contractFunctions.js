@@ -5,7 +5,7 @@ export function buyPackageUpTo(event) {
     const ethAmount = data.get('ethAmount');
     const upTo = data.get('upTo');
 
-    console.log(ethAmount + '-' + upTo);
+    //console.log(ethAmount + '-' + upTo);
 
     if (ethAmount > 0 && upTo > 0) {
         this.setState({loading: true, txHash: null});
@@ -29,13 +29,14 @@ export async function setCurrentPrice() {
 export async function packagesOwned() {
 
     const pOwned = await this.props.contract.packagesOwned(this.state.account);
+    const allowedPkg = 25 - pOwned
     if (pOwned.toNumber() != this.state.pkgOwned) {
         if (pOwned.toNumber() < 25) {
          
-            this.setState({pkgOwned: pOwned.toNumber(), pkgLimit: false});
+            this.setState({pkgOwned: pOwned.toNumber(), pkgLimit: false, pkgAllowed: allowedPkg});
         } else {
             
-            this.setState({pkgOwned: pOwned.toNumber(), pkgLimit: true});
+            this.setState({pkgOwned: pOwned.toNumber(), pkgLimit: true, pkgAllowed: allowedPkg});
         }
     }
  }
