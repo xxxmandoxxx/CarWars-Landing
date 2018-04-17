@@ -6,7 +6,7 @@ export function buyPackageUpTo(event) {
     const upTo = data.get('upTo');
 
     //console.log(ethAmount + '-' + upTo);
-
+ 
     if (ethAmount > 0 && upTo > 0) {
         this.setState({loading: true, txHash: null});
         this.props.contract.purchasePackagesUpto(upTo, 

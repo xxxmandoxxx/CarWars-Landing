@@ -45,7 +45,7 @@ class PresaleForm extends Component {
         if (this.props.loading) {
             return(
                 <PresalePanelWrapper>
-                        <PresaleLoading txHash={this.props.txHash} />
+                        <PresaleLoading txHash={this.props.txHash} skip={this.props.skip} />
                 </PresalePanelWrapper>
             )
      

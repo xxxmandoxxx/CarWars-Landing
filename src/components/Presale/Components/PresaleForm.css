@@ -17,7 +17,7 @@
 }
 
 .presale-panel-header {
-    padding: 0px 15px 0px 15px;
+    padding: 5px 15px 0px 15px;
     border-bottom: solid 1px #56a2fd;
 
 }
@@ -55,3 +55,6 @@
     background-color: #56a2fd !important;
 }
 
+.rangeslider__handle {
+    outline: none;
+}

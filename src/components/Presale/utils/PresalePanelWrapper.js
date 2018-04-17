@@ -4,8 +4,8 @@ const presalePanelWrapper = (props) => {
     return(
         <div className="PresaleForm">
                 <div className='container'>
-                    <div className="row col-xs-12">
-                        <div className="col-xs-6 presale-panel">
+                    
+                        <div className="col-md-6 col-12 presale-panel">
                             <div className="presale-panel-header animated fadeIn">
                                 <h2>??? / 5000 Packages Sold</h2>
                             </div>
@@ -19,7 +19,7 @@ const presalePanelWrapper = (props) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                   
                 </div>
             </div>
     )

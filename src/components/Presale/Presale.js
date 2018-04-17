@@ -44,7 +44,9 @@ class Presale extends Component {
     }
 
     componentDidMount() {
+    if (!this.state.web3.currentProvider.portisLocation) {
       this.checkAccountChangedHandler()
+    }
       this.setCurrentPrice()
       this.packagesOwned() 
     }
@@ -59,7 +61,7 @@ class Presale extends Component {
     }
 
     modalCloseHandler = () => {
-        this.setState({showModal: false});
+        this.setState({showModal: false, txHash: null});
     }
 
     purchaseEventHandler = (result) => {
@@ -68,7 +70,7 @@ class Presale extends Component {
         this.showPurchesTicker(result);
         if (this.state.txHash == result.transactionHash) {
             this.packagesOwned()
-            this.setState({loading: false, txHash: null, pkgBought: result.args.pkgsBought.toNumber(), ethSpend: result.args.spend.toNumber() ,showModal: true})
+            this.setState({loading: false, pkgBought: result.args.pkgsBought.toNumber(), ethSpend: result.args.spend.toNumber() ,showModal: true})
         }
     }
 
@@ -81,6 +83,11 @@ class Presale extends Component {
                 hideAnimation: 'animated bounceOutDown'
               }
           );}
+    }
+
+    skipLoading = () => {
+        console.log('skipping');
+        this.setState({loading: false});
     }
 
     checkAccountChangedHandler = () => {
@@ -102,7 +109,11 @@ class Presale extends Component {
         if (this.state.showModal) {
             modal = <ModalWrapper close={this.modalCloseHandler} title={<h3>Transaction successful</h3>}>
             <p>Thank you for participating in our pre-sale. Your transaction has been confirmed.</p>
+        
             <ul>
+                <li>Etherscan: <a href={"https://etherscan.io/tx/" + this.state.txHash}
+            className="white" target="_blank" rel="noopener noreferrer" >
+            {this.state.txHash.substring(0,15)+"..."}</a></li>
                 <li>Packages bought: <strong>{this.state.pkgBought}</strong></li>
                 <li>ETH spent: <strong>{this.state.web3.utils.fromWei(this.state.ethSpend.toString(), 'ether')}</strong></li>
             </ul>
@@ -130,7 +141,8 @@ class Presale extends Component {
                 {modal}
                 <PresaleForm {...this.state} 
                 buyPackageUpTo={buyPackageUpTo.bind(this)} 
-                packagesOwned={this.packagesOwned.bind(this)}/>
+                packagesOwned={this.packagesOwned.bind(this)}
+                skip={this.skipLoading.bind(this)}/>
             </div>)
         }
         

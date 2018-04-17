@@ -1,4 +1,4 @@
-import Web3 from 'web3'
+import Web3 from 'web3';
 
 const resolveWeb3 = (resolve) => {
   let { web3 } = window
@@ -9,9 +9,11 @@ const resolveWeb3 = (resolve) => {
     console.log(`Injected web3 detected. `)
     web3 = new Web3(web3.currentProvider)
   } else {
-    console.log(`No web3 instance injected, using Local web3.`)
-    const provider = new Web3.providers.HttpProvider(localProvider)
-    web3 = new Web3(provider)
+    console.log(`No web3 instance injected, using Portis web3.`)
+    const portis = require('portis');
+    //const provider = new Web3.providers.HttpProvider(localProvider)
+    web3 = new Web3(new portis.Provider({ network: 'ropsten' }));
+    //web3 = new Web3(provider)
   }
 
   resolve(web3)

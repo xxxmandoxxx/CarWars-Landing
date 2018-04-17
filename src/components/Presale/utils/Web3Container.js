@@ -1,7 +1,7 @@
 import React from 'react'
 import getWeb3 from './getWeb3'
 import getAccounts from './getAccounts'
-import getContract from './getContract'
+import getContract, {USEDNETWORK} from './getContract'
 import Web3ErrorWrapper from './Web3ErrorWrapper';
 import SwitchToMainNet from '../Components/SwitchToMainNet';
 //import contractDefinition from '../contracts/Presale.sol.json';
@@ -24,8 +24,8 @@ export default class Web3Container extends React.Component {
 
   render () {
     const { web3, accounts, contract } = this.state
-
-    if (web3 && this.state.networkID !== 5777) {
+  
+    if (web3 && this.state.networkID != USEDNETWORK) {
       return <Web3ErrorWrapper><SwitchToMainNet /></Web3ErrorWrapper>
     } else {
     return web3 && accounts && contract

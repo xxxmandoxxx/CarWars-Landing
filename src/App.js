@@ -42,7 +42,7 @@ class App extends Component {
     if (this.state.is_registered === true) {
        view = <ThankYou />
     } else {
-       view = <Main regDone={this.regDone.bind(this)} showStory={this.state.showStory} triggerStory={this.triggerStoryHandler} />
+       view = <Main regDone={this.regDone.bind(this)}  />
     }
 
     return (

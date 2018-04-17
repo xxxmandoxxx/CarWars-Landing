@@ -1,13 +1,18 @@
 import React from 'react';
 import Web3ErrorWrapper from './Web3ErrorWrapper';
 import MetaMaksLogo from '../img/metamask.png';
+import PortisLogo from '../img/portis_logo.svg';
 
 const loading = (props) => {
     return(
         <Web3ErrorWrapper>
-            <h4>Loading Web3 (MetaMask)...</h4>
-            <div>
-                <img src={MetaMaksLogo} width="350px" alt="MetaMask logo"/>
+            <div className="Loading">
+                <h4>Loading Web3...</h4>
+                <p>Please install MetaMask or sign in to Portis</p>
+                <div className="LoadingLogos">
+                    <img src={MetaMaksLogo} width="80px" alt="MetaMask logo"/>
+                    <img src={PortisLogo} width="70px" alt="Portis Logo" />
+                </div>
             </div>
         </Web3ErrorWrapper>
     )

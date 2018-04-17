@@ -6,8 +6,8 @@ const RINKEBY = "4";
 const ROPSTEN = "3";
 const LOCAL = "5777"
 
-const USEDNETWORK = LOCAL
-const ADDRESS = "0x1f08ED9617f5890C10729C37929B38A06c84A508"
+export const USEDNETWORK = ROPSTEN
+const ADDRESS = "0xBD5d16CfD873A42f69344d864867D5C58340d727"
 
 
 const getContract = async (web3) => {
