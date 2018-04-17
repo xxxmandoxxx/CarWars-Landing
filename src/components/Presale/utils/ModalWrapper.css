@@ -1,0 +1,38 @@
+.modal-wrapper {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100,100,100,0.5)
+}
+
+.modal-wrapper-content {
+    text-align: left;
+    margin: auto;
+    margin-top: 15%;
+    margin-left: 35%;
+    width: 30%;
+    color: #d3dadf;
+    padding: 25px;
+    background-color: rgba(100,100,100,1);
+    border-radius: 5px;
+}
+
+.modal-wrapper-close {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.modal-wrapper-title {
+    margin-bottom: 15px;
+    margin-top: -15px;
+    text-align: center;
+}
+
+.modal-wrapper-content > ul {
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 25px;
+}

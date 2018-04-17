@@ -5,8 +5,10 @@ import MetaMaksLogo from '../img/metamask.png';
 const loading = (props) => {
     return(
         <Web3ErrorWrapper>
-            <h1>Loading Web3 (MetaMask)...</h1>
-            <img src={MetaMaksLogo} width="350px" />
+            <h4>Loading Web3 (MetaMask)...</h4>
+            <div>
+                <img src={MetaMaksLogo} width="350px" alt="MetaMask logo"/>
+            </div>
         </Web3ErrorWrapper>
     )
 };

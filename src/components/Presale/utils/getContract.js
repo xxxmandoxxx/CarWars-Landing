@@ -7,7 +7,7 @@ const ROPSTEN = "3";
 const LOCAL = "5777"
 
 const USEDNETWORK = LOCAL
-const ADDRESS = "0xBA4e61629EdC37C46B1879002F69a4C63fcFe3E4"
+const ADDRESS = "0x1f08ED9617f5890C10729C37929B38A06c84A508"
 
 
 const getContract = async (web3) => {

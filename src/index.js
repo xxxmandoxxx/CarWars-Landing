@@ -4,7 +4,6 @@ import './index.css';
 import './Nav.css';
 import App from './App';
 import About from './About';
-import Fog from './Fog';
 import PresaleContainer from './PresaleContainer';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -25,8 +24,6 @@ ReactDOM.render(
 
         </ul>
         </nav>
-
-        <Fog />
 
         <Route exact path="/" component={App}/>
         <Route path="/about" component={About}/>

@@ -76,7 +76,7 @@ class PresaleForm extends Component {
         )} else {
             return (
             <PresalePanelWrapper>
-                You reached the limit of 25 packages
+                <h4>You reached the limit of 25 packages</h4>
             </PresalePanelWrapper>
             )
         } 

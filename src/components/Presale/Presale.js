@@ -4,6 +4,8 @@ import UnlockAccount from './Components/UnlockAccount';
 import PresaleForm from './Components/PresaleForm';
 import Web3ErrorWrapper from './utils/Web3ErrorWrapper';
 import { ToastContainer } from "react-toastr";
+import SwitchToMainNet from './Components/SwitchToMainNet';
+import ModalWrapper from './utils/ModalWrapper';
 
 import { buyPackageUpTo, setCurrentPrice, packagesOwned } from './utils/contractFunctions';
 
@@ -29,11 +31,14 @@ class Presale extends Component {
             loading: false,
             pkgOwned: 0,
             txHash: null,
-            pkgAllowed: 25
+            pkgAllowed: 25,
+            pkgBought: 0,
+            ethSpend: 0,
+            showModal: false
         }
 
-        const PurchaseEvent = this.props.contract.Purchased();
-        PurchaseEvent.watch((error, result) => {
+        this.PurchaseEvent = this.props.contract.Purchased();
+        this.PurchaseEvent.watch((error, result) => {
             this.purchaseEventHandler(result);
         });
     }
@@ -41,7 +46,7 @@ class Presale extends Component {
     componentDidMount() {
       this.checkAccountChangedHandler()
       this.setCurrentPrice()
-      this.packagesOwned()
+      this.packagesOwned() 
     }
 
     componentWillUpdate() {
@@ -50,6 +55,11 @@ class Presale extends Component {
 
     componentWillUnmount() {
         clearInterval(this.intervalID);
+
+    }
+
+    modalCloseHandler = () => {
+        this.setState({showModal: false});
     }
 
     purchaseEventHandler = (result) => {
@@ -58,7 +68,7 @@ class Presale extends Component {
         this.showPurchesTicker(result);
         if (this.state.txHash == result.transactionHash) {
             this.packagesOwned()
-            this.setState({loading: false, txHash: null})
+            this.setState({loading: false, txHash: null, pkgBought: result.args.pkgsBought.toNumber(), ethSpend: result.args.spend.toNumber() ,showModal: true})
         }
     }
 
@@ -87,12 +97,24 @@ class Presale extends Component {
     }
 
     render() {
-       
+        let modal = null;
+
+        if (this.state.showModal) {
+            modal = <ModalWrapper close={this.modalCloseHandler} title={<h3>Transaction successful</h3>}>
+            <p>Thank you for participating in our pre-sale. Your transaction has been confirmed.</p>
+            <ul>
+                <li>Packages bought: <strong>{this.state.pkgBought}</strong></li>
+                <li>ETH spent: <strong>{this.state.web3.utils.fromWei(this.state.ethSpend.toString(), 'ether')}</strong></li>
+            </ul>
+            </ModalWrapper>
+        }
+
+
         //Checking if contract found - if not wrong network
         if (!this.state.isMainNet) {
             return (
                 <Web3ErrorWrapper>
-                    Please switch to mainnet.
+                    <SwitchToMainNet />
                 </Web3ErrorWrapper>
             )
         }
@@ -105,7 +127,7 @@ class Presale extends Component {
                  <ToastContainer
                     ref={ref => this.container = ref}
                     className="toast-bottom-right"/>
-
+                {modal}
                 <PresaleForm {...this.state} 
                 buyPackageUpTo={buyPackageUpTo.bind(this)} 
                 packagesOwned={this.packagesOwned.bind(this)}/>

@@ -14,7 +14,7 @@ const presaleLoading = (props) => {
                     <a href={"https://etherscan.io/tx/" + props.txHash} className="white" target="_blank" rel="noopener noreferrer" >{props.txHash.substring(0,15)+"..."}</a>
                 </div>
                 <div className="loading-image-container">
-                    <img src={loadingGif} width="150px" />
+                    <img src={loadingGif} width="150px" alt="loading animation" />
                 </div>
             
             </div>
@@ -26,7 +26,7 @@ const presaleLoading = (props) => {
                     Waiting for transaciton to be sent...
                 </div>
                 <div className="loading-image-container">
-                    <img src={loadingGif} width="150px" />
+                    <img src={loadingGif} width="150px" alt="loading animation" />
                 </div>
             </div>
         )

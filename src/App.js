@@ -4,6 +4,7 @@ import './Fog.css';
 import Footer from './components/Footer';
 import ThankYou from './components/ThankYou';
 import Main from './components/Main';
+import Fog from './Fog';
 
 
 import ReactGA from 'react-ga';
@@ -19,6 +20,14 @@ class App extends Component {
      showStory: false
   };
   
+  componentDidMount () {
+    document.body.style.overflow = "hidden";
+  }
+
+  componentWillUnmount () {
+    document.body.style.overflow = "visible";
+  }
+
   regDone() {
     this.setState({is_registered: true});
   }
@@ -39,6 +48,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
+          <Fog />
           {view}
           <Footer />
         </div>

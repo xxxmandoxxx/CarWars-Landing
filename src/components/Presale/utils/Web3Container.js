@@ -24,7 +24,7 @@ export default class Web3Container extends React.Component {
 
   render () {
     const { web3, accounts, contract } = this.state
-    
+
     if (web3 && this.state.networkID !== 5777) {
       return <Web3ErrorWrapper><SwitchToMainNet /></Web3ErrorWrapper>
     } else {
