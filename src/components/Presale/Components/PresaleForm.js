@@ -15,7 +15,7 @@ class PresaleForm extends Component {
 
         this.state = {
             pkgAmount: 1,
-            multiplier: 1,
+            multiplier: 0.01,
         }
     }
 
@@ -31,11 +31,10 @@ class PresaleForm extends Component {
     }
 
     setMultiplierHandler = (value) => {
-        
         if (value.target.checked) {
-            this.setState({multiplier: 1.05})
+            this.setState({multiplier: 0.01})
         } else {
-            this.setState({multiplier: 1})
+            this.setState({multiplier: 0})
         }
     }
 
@@ -61,13 +60,13 @@ class PresaleForm extends Component {
                 <form onSubmit={this.formSubmitHandler} className="PresaleForm-form">
                    Guarantee purchase:
                     <div className="switch">
-                        <input type="checkbox" name="securePkg" onChange={this.setMultiplierHandler}/>
+                        <input type="checkbox" name="securePkg" onChange={this.setMultiplierHandler} defaultChecked="true"/>
                         <label htmlFor="toggle"><i></i></label>
                         <span></span>
                     </div>
-                    <input type='number' min='0' max='10' step="any" name="ethAmount" hidden="true" readOnly="true" value={this.props.currentPrice * this.state.pkgAmount * this.state.multiplier}/>
+                    <input type='number' min='0' max='10' step="any" name="ethAmount" hidden="true" readOnly="true" value={this.props.currentPrice * this.state.pkgAmount + this.state.multiplier}/>
                     <input type='number' min='1' max='25' name='upTo' hidden='true' readOnly="true" value={this.state.pkgAmount}/>
-                    <div className="total"><h4>Total: {(this.props.currentPrice * this.state.pkgAmount * this.state.multiplier).toFixed(5)}ETH </h4><br /></div>
+                    <div className="total"><h4>Total: {(this.props.currentPrice * this.state.pkgAmount + this.state.multiplier).toFixed(5)}ETH </h4><br /></div>
                     <button type='submit' className="btn btn-primary">Buy {this.state.pkgAmount} Packages</button>
                 </form>
                 

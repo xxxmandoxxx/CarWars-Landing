@@ -14,16 +14,14 @@ class About extends Component {
                 <div className="AboutBackdrop">
                     <div className="AboutContainer">
                         <div className="AboutContent">
-                        <p>A tight-functional team is in the process of creating a game on Ethereum that is not for the faint hearted.</p>
+                        <p>Car Wars is unlike anything you've experienced before.
+                        It will make you reconsider what you thought you knew about gaming, whilst pushing the boundaries of decentralised technologies to do so.</p>
 
-                        <p>In the presale, you purchase blueprints from “The Makers”. (more about their backstory later)
-                        Presale blueprints are limited to 5000 and carry a unique mark that will never be seen again.
-                        When “The Factory” (smart-contract) opens, you will be able to redeem the rare cars corresponding to your blueprints.
-                        You own and control your car, which conforms to the ERC721 standard.</p>
+                        <p>The cars made here will be yours to keep beyond the game.
+                        Like all other crypto-assets (ERC721) you are the owner, free to do what you want with them.</p>
 
-                        <p>After this, the game really begins... When the time comes, will you be ready?</p>
+                        <p>Improving your asset is up to you, but you can't buy your way to the top. You'll need knowledge, skill, and nerves of steel. Challenge others to get ahead, but pick your battles wisely because the consequences can be devastating.</p>
 
-                        <p>For those just starting out, you’ll need to allow time to buy some ether (eg. CoinBase), then install and get familiar with MetaMask.</p>
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,7 @@ const loading = (props) => {
                 <h4>Loading Web3...</h4>
                 <p>Please install MetaMask or sign in to Portis</p>
                 <div className="LoadingLogos">
-                    <img src={MetaMaksLogo} width="80px" alt="MetaMask logo"/>
+                    <img src={MetaMaksLogo} width="120px" alt="MetaMask logo"/>
                     <img src={PortisLogo} width="70px" alt="Portis Logo" />
                 </div>
             </div>

@@ -12,12 +12,17 @@
     text-align: left;
     margin: auto;
     margin-top: 15%;
-    margin-left: 35%;
-    width: 30%;
+    width: 40%;
     color: #d3dadf;
     padding: 25px;
     background-color: rgba(100,100,100,1);
     border-radius: 5px;
+    text-overflow: ellipsis;
+}
+
+.modal-wrapper-content > p {
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .modal-wrapper-close {
@@ -35,4 +40,13 @@
     text-align: left;
     padding-top: 15px;
     padding-left: 25px;
+}
+
+@media only screen and (max-width: 780px) {
+    .modal-wrapper-content {
+
+        margin-top: 25%;
+        width: 80%;
+     
+    }
 }
