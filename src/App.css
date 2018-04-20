@@ -16,6 +16,20 @@
   margin-top: 25px;
 }
 
+.soundButton {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  color: #56a2fd;
+  font-size: 16px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.soundOff {
+  color: #5d6064;
+}
+
 body {
   background: url('/img/background-image.png') no-repeat center center fixed;
   -webkit-background-size: cover;
