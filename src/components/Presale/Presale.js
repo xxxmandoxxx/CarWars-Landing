@@ -39,10 +39,7 @@ class Presale extends Component {
             gifts: 0,
         }
 
-        this.PurchaseEvent = this.props.contract.Purchased();
-        this.PurchaseEvent.watch((error, result) => {
-            this.purchaseEventHandler(result);
-        });
+        
     }
 
     componentDidMount() {
@@ -51,7 +48,11 @@ class Presale extends Component {
     }
       this.setCurrentPrice();
       this.packagesOwned() ;
-      
+
+      this.PurchaseEvent = this.props.contract.Purchased();
+      this.intervalID = this.PurchaseEvent.watch((error, result) => {
+            this.purchaseEventHandler(result);
+        });
     }
 
     componentWillUpdate() {
@@ -90,6 +91,7 @@ class Presale extends Component {
 
     skipLoading = () => {
         console.log('skipping');
+        this.packagesOwned();
         this.setState({loading: false});
     }
 

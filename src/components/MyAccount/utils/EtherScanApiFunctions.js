@@ -6,7 +6,6 @@ export async function getTxforAccount(account) {
                                 return(response.json());
                             })
                             .then(function(myJson) {
-                                console.log(myJson);
                                 return myJson.result
                             });
     this.setState({accountTx: accountTx, loadingTx: false})
