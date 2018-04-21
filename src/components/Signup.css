@@ -47,13 +47,13 @@
     width: 100px; 
     height: 100px;
     margin-left: 10px; 
-    background: url('/img/StartButtonOff.png');
+    background: url('/img/StartButtonOff.svg');
     background-size: cover;
 }
 
 
 .email-button:hover{
-    background: url('/img/StartButtonOn.png');
+    background: url('/img/StartButtonOn.svg');
     background-size: cover;
 }
 

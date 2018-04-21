@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PresaleLoading from './PresaleLoading';
 import Slider from 'react-rangeslider';
 import PresalePanelWrapper from '../utils/PresalePanelWrapper';
+import ToolTipWrapper from "../utils/ToolTipWrapper";
 
 
 import 'react-rangeslider/lib/index.css';
@@ -58,7 +59,9 @@ class PresaleForm extends Component {
                 Packages: {this.state.pkgAmount}<br />
                 
                 <form onSubmit={this.formSubmitHandler} className="PresaleForm-form">
-                   Guarantee purchase:
+                    <ToolTipWrapper tooltiptext="This will add ETH 0.01 to the transaction to guarantee that you will get the amount of packages selected. Any excess ETH will be refunded in full.">
+                        Guarantee purchase:
+                    </ToolTipWrapper>
                     <div className="switch">
                         <input type="checkbox" name="securePkg" onChange={this.setMultiplierHandler} defaultChecked="true"/>
                         <label htmlFor="toggle"><i></i></label>
