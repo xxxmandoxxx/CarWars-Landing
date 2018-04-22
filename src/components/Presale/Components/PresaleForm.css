@@ -11,6 +11,32 @@
     min-height: 450px;
 }
 
+.presale-image{
+    margin-top: 170px;
+    text-align: center;
+    display: table;
+    min-height: 450px;
+    perspective: 1000px;
+}
+.presale-image > img {
+    transform: rotateY(140deg);
+    box-shadow: 1px 1px 15px 3px #56a2fd;
+    transition-property: all;
+    transition-property: transform, box-shadow;
+    transition-duration: 1s;
+    animation: enter 1s, hovering 2s infinite;
+}
+
+.presale-image-mini {
+   display: none;
+}
+
+.presale-image > img:hover {
+    transform: rotateY(180deg);
+    box-shadow: 1px 1px 15px 10px #56a2fd;
+    animation: none;
+}
+
 .presale-panel-form {
     padding: 15px;
     margin-top: 25px;
@@ -57,4 +83,47 @@
 
 .rangeslider__handle {
     outline: none;
+}
+
+
+@keyframes hovering {
+    0% {
+        margin-top: -3px;
+    }
+
+
+    50% {
+        margin-top: 3px;
+    
+    }
+
+    100% {
+        margin-top: -3px;
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    .presale-image{ 
+        display: none;
+    }
+
+    .presale-image-mini {
+        display: block;
+        position: absolute;
+        top: 17%;
+        left: 35%;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 550px) { 
+    .presale-image-mini {
+        display: block;
+        position: absolute;
+        top: 20%;
+        left: 45%;
+        width: 50%;
+    }
+
 }

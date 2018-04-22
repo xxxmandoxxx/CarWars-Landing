@@ -6,6 +6,7 @@ import Web3ErrorWrapper from './utils/Web3ErrorWrapper';
 import { ToastContainer } from "react-toastr";
 import SwitchToMainNet from './Components/SwitchToMainNet';
 import ModalWrapper from './utils/ModalWrapper';
+import PresaleDetails from './Components/PresaleDetails';
 
 import { buyPackageUpTo, setCurrentPrice, packagesOwned, claimPackages } from './utils/contractFunctions';
 
@@ -81,7 +82,7 @@ class Presale extends Component {
     showPurchesTicker = (result) => {
         if (this.container != null) {
         this.container.info(
-            <strong>A user just bought some packages</strong>,
+            <strong>A user just bought {result.args.pkgsBought.toNumber()} packages</strong>,
             <em>{result.transactionHash.substring(0,20)+"..."}</em>,{
                 showAnimation: 'animated bounceInUp',
                 hideAnimation: 'animated bounceOutDown'
@@ -117,7 +118,7 @@ class Presale extends Component {
         
             <ul>
                 <li>Etherscan: <a href={"https://etherscan.io/tx/" + this.state.txHash}
-            className="white" target="_blank" rel="noopener noreferrer" >
+            className="txLink" target="_blank" rel="noopener noreferrer" >
             {this.state.txHash.substring(0,15)+"..."}</a></li>
                 <li>Packages bought: <strong>{this.state.pkgBought}</strong></li>
                 <li>ETH spent: <strong>{this.state.web3.utils.fromWei(this.state.ethSpend.toString(), 'ether')}</strong></li>
@@ -161,6 +162,7 @@ class Presale extends Component {
                 buyPackageUpTo={buyPackageUpTo.bind(this)} 
                 packagesOwned={this.packagesOwned.bind(this)}
                 skip={this.skipLoading.bind(this)}/>
+                <PresaleDetails />
             </div>)
         }
         

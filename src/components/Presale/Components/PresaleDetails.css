@@ -1,0 +1,47 @@
+.PresaleDetails {
+    margin-top: 50px;
+    
+    color: #d3dadf;
+    background-color: rgba(35, 31, 32, 0.7);
+    padding: 5px 25px 0px 25px;
+    border-radius: 5px;
+    line-height: 20pt;
+   /** background-color: rgba(86, 162, 253, 0.1) **/
+}
+
+.presaledetails-header {
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: solid 1px rgb(86, 162, 253)
+}
+
+.presaledetails-content {
+    margin-bottom: 50px;
+}
+
+
+.presaledetails-even {
+    display: block;
+    height: 250px;
+    margin: 25px -25px 0px -25px;
+    padding: 25px;
+    background-color: rgb(86, 162, 253, 0.1);
+}
+
+.presaledetails-odd {
+    display: block;
+    height: 250px;
+    text-align: right;
+    margin: 25px -25px 0px -25px;
+    background-color: rgba(212, 212, 212, 0.3);
+    padding: 25px;
+}
+
+.header-factory {
+    margin-top: 50px;
+
+}
+
+.content-factory {
+    padding-bottom: 50px;
+}

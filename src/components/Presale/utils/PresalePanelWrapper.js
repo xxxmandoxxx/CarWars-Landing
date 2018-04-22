@@ -1,5 +1,8 @@
 import React from 'react';
 
+import box_image from '../img/carwars_box.png';
+import blueprint from '../img/blueprint.png'
+
 const presalePanelWrapper = (props) => {
     return(
         <div className="PresaleForm">
@@ -18,6 +21,9 @@ const presalePanelWrapper = (props) => {
                                     All pre-sale blue prints carry a unique mark that will never be seen again.
                                 </div>
                             </div>
+                        </div>
+                        <div className="col-md-6 presale-image">
+                            <img src={blueprint} alt="loot crate image" width="100%"/>
                         </div>
                    
                 </div>

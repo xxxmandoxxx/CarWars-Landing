@@ -5,8 +5,17 @@ import MyAccountTx from "./MyAccountTx";
 import {getTxforAccount} from './utils/EtherScanApiFunctions';
 import {packagesOwned} from '../Presale/utils/contractFunctions';
 import MyAccountWrapper from './utils/MyAccountWrapper';
+import { ToastContainer } from "react-toastr";
+
+import Web3ErrorWrapper from '../Presale/utils/Web3ErrorWrapper';
+import SwitchToMainNet from '../Presale/Components/SwitchToMainNet';
+import UnlockAccount from '../Presale/Components/UnlockAccount';
 
 import './MyAccount.css';
+
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-116684519-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 class MyAccount extends Component {
 
@@ -14,6 +23,8 @@ class MyAccount extends Component {
         super(props);
         this.getTxforAccount = getTxforAccount.bind(this);
         this.packagesOwned = packagesOwned.bind(this);
+        this.container = null;
+        this.intervalID = null;
 
         this.state = {
             loadingTx: true,
@@ -24,6 +35,7 @@ class MyAccount extends Component {
             pkgOwned: 0,
             pkgAllowed: 25,
             gifts: 0,
+            isMainNet: (this.props.contract != null),
         }
 
     }
@@ -34,6 +46,15 @@ class MyAccount extends Component {
           }
         this.getTxforAccount(this.state.account);
         this.packagesOwned();
+
+        this.PurchaseEvent = this.props.contract.Purchased();
+        this.intervalID = this.PurchaseEvent.watch((error, result) => {
+              this.purchaseEventHandler(result);
+          });
+    }
+
+    componentWillUnmount () {
+        clearInterval(this.intervalID);
     }
 
     checkAccountChangedHandler = () => {
@@ -50,19 +71,45 @@ class MyAccount extends Component {
         }, 1000)
     }
 
+    showPurchesTicker = (result) => {
+        if (this.container != null) {
+        this.container.info(
+            <strong>A user just bought {result.args.pkgsBought.toNumber()} packages</strong>,
+            <em>{result.transactionHash.substring(0,20)+"..."}</em>,{
+                showAnimation: 'animated bounceInUp',
+                hideAnimation: 'animated bounceOutDown'
+              }
+          );}
+    }
+
+    purchaseEventHandler = (result) => {
+        this.showPurchesTicker(result);
+    }
+
     render() {
 
-        
+        if (!this.state.isMainNet) {
+            return (
+                <Web3ErrorWrapper>
+                    <SwitchToMainNet />
+                </Web3ErrorWrapper>
+            )
+        }
 
-   
+        if (this.state.account == null) {
+            return <Web3ErrorWrapper><UnlockAccount /></Web3ErrorWrapper>
+        } else {
         return(
             <MyAccountWrapper account={this.state.account}>
+                 <ToastContainer
+                    ref={ref => this.container = ref}
+                    className="toast-bottom-right"/>
                 <div className="MyAccount">
                     <MyAccountInfo {...this.state}/>
                     <MyAccountTx {...this.state} contractAddress={this.props.contract.address} />
                 </div>
             </MyAccountWrapper>
-        )
+        )}
     }
 }
 

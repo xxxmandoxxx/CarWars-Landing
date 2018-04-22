@@ -3,7 +3,10 @@ nav {
     z-index: 1000;
     right: 0;
     margin-right: 5px;
-    margin-top: 5px;
+    padding-top: 5px;
+    background-color: rgba(2,5,8,0.8);
+    width: 100%;
+    text-align: right;
 }
 
 .nav-item { 

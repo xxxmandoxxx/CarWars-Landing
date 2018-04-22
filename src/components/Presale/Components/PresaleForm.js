@@ -3,6 +3,7 @@ import PresaleLoading from './PresaleLoading';
 import Slider from 'react-rangeslider';
 import PresalePanelWrapper from '../utils/PresalePanelWrapper';
 import ToolTipWrapper from "../utils/ToolTipWrapper";
+import blueprint from '../img/blueprint.png'
 
 
 import 'react-rangeslider/lib/index.css';
@@ -72,6 +73,9 @@ class PresaleForm extends Component {
                     <div className="total"><h4>Total: {(this.props.currentPrice * this.state.pkgAmount + this.state.multiplier).toFixed(5)}ETH </h4><br /></div>
                     <button type='submit' className="btn btn-primary">Buy {this.state.pkgAmount} Packages</button>
                 </form>
+                <div className="presale-image presale-image-mini">
+                            <img src={blueprint} alt="loot crate image" width="80%"/>
+                </div>
                 
             </PresalePanelWrapper>
                            
