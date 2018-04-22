@@ -37,6 +37,21 @@
     padding: 25px;
 }
 
+.image-container-even {
+    text-align: right;
+    height: 200px;
+}
+
+.image-container-odd {
+    text-align: left;
+    margin-top: 90px;
+    margin-left: -50px;
+}
+
+.image-container-odd > img {
+    width: 500px;
+}
+
 .header-factory {
     margin-top: 50px;
 
@@ -44,4 +59,10 @@
 
 .content-factory {
     padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 991px) {
+    .image-container-odd, .image-container-even {
+        display: none;
+    }
 }
