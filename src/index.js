@@ -7,6 +7,7 @@ import About from './About';
 import PresaleContainer from './PresaleContainer';
 import MyAccount from './components/MyAccount/MyAccountContainer';
 import Error404 from './Error404';
+import Footer from './components/Footer';
 
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
@@ -14,9 +15,26 @@ import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 //import createBrowserHistory from 'history/createBrowserHistory'
 //const history = createBrowserHistory();
 
+console.log('%cWELCOME TO CARWARS! ', 'background: #fff; color: #56a2fd; font-size: 48pt;');
+console.log("%cDon't forget to follow us", 'background: #fff; color: #56a2fd; font-size: 24pt;');
+console.log("%cTelegram:", 'background: #fff; color: #56a2fd; font-size: 24pt;');
+console.log("%chttps://t.me/ethergames_au", 'background: #fff; color: #56a2fd; font-size: 18pt;');
+console.log("%cDiscord:", 'background: #fff; color: #56a2fd; font-size: 24pt;');
+console.log("%chttps://discord.gg/9wqx5aE", 'background: #fff; color: #56a2fd; font-size: 18pt;');
+console.log(`%c 
+            ___
+  _-_-  _/\______\\__
+_-_-__  / ,-. -|-  ,-.\`-.
+hjw _-_- \`( o )----( o )-'
+           \`-'      \`-'
+           
+           `, "font-family:monospace; font-size: 16pt;");
+
 ReactDOM.render(
 
+
 <BrowserRouter>
+    
     <div>
         <nav>
         <ul>
@@ -33,6 +51,11 @@ ReactDOM.render(
             <Route path="/presale" component={PresaleContainer}/>
             <Route path="/myAccount" component={MyAccount}/>
             <Route component={Error404} />
+        </Switch>
+        <Switch>
+            <Route exact path="/about" component={Footer}/>
+            <Route exact path="/presale" component={Footer}/>
+            <Route exact path="/myAccount" component={Footer}/>
         </Switch>
     </div>
 </BrowserRouter>

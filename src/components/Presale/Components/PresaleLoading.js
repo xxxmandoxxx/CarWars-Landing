@@ -10,7 +10,7 @@ const presaleLoading = (props) => {
             <div className="text-center animated fadeIn">
                 <div className="animated slideInUp loadingMessage">
                     Transaction received! <br />
-                    Waiting for transactio to be confirmed:<br />
+                    Waiting for transaction to be confirmed:<br />
                     <a href={"https://etherscan.io/tx/" + props.txHash} className="txLink" target="_blank" rel="noopener noreferrer" >{props.txHash.substring(0,15)+"..."}</a>
                 </div>
                 <div>

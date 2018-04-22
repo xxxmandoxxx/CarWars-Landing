@@ -15,6 +15,7 @@ const myAccountTx = (props) => {
                 <th>{item.confirmations}</th>
             </tr> )
         }
+        return null
       })
 
     if (props.loadingTx) {

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import box_image from '../img/carwars_box.png';
 import blueprint from '../img/blueprint.png'
 
 const presalePanelWrapper = (props) => {
@@ -23,7 +22,7 @@ const presalePanelWrapper = (props) => {
                             </div>
                         </div>
                         <div className="col-md-6 presale-image">
-                            <img src={blueprint} alt="loot crate image" width="100%"/>
+                            <img src={blueprint} alt="loot crate" width="100%"/>
                         </div>
                    
                 </div>

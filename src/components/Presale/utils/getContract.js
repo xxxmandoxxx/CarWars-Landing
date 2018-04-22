@@ -1,10 +1,10 @@
 import initContract from 'truffle-contract'
 import { abi } from '../utils/Presale.abi.js';
 
-const MAIN_NET = "1";
-const RINKEBY = "4";
-const ROPSTEN = "3";
-const LOCAL = "5777"
+//const MAIN_NET = "1";
+//const RINKEBY = "4";
+const ROPSTEN = 3;
+//const LOCAL = "5777"
 
 export const USEDNETWORK = ROPSTEN
 const ADDRESS = "0x7744e228ed0FDa108600F459972084fB0284d81e"
@@ -40,7 +40,7 @@ const getContract = async (web3) => {
   
   return(web3.eth.net.getId()
   .then(async (id) => {
-    if (id == USEDNETWORK) {
+    if (id === USEDNETWORK) {
       const instance = await contract.at(ADDRESS)
       return instance
     } else {

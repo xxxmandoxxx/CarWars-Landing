@@ -45,7 +45,7 @@ export async function packagesOwned() {
         const pOwned = await this.props.contract.packagesOwned(this.state.account);
         const gifts = await this.props.contract.giftPackagesForUser(this.state.account); 
         const allowedPkg = 25 - pOwned
-        if (pOwned.toNumber() != this.state.pkgOwned || gifts.toNumber() != this.state.gifts ) {
+        if (pOwned.toNumber() !== this.state.pkgOwned || gifts.toNumber() !== this.state.gifts ) {
             if (pOwned.toNumber() < 25) {      
                 this.setState({pkgOwned: pOwned.toNumber(), pkgLimit: false, pkgAllowed: allowedPkg, gifts: gifts.toNumber()});
             } else {        

@@ -73,7 +73,7 @@ class Presale extends Component {
         console.log("Purchase Event");
         this.setCurrentPrice();
         this.showPurchesTicker(result);
-        if (this.state.txHash == result.transactionHash) {
+        if (this.state.txHash.toLowerCase() === result.transactionHash.toLowerCase()) {
             this.packagesOwned()
             this.setState({loading: false, pkgBought: result.args.pkgsBought.toNumber(), ethSpend: result.args.spend.toNumber(), showModal: true})
         }

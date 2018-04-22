@@ -74,7 +74,7 @@ class PresaleForm extends Component {
                     <button type='submit' className="btn btn-primary">Buy {this.state.pkgAmount} Packages</button>
                 </form>
                 <div className="presale-image presale-image-mini">
-                            <img src={blueprint} alt="loot crate image" width="80%"/>
+                            <img src={blueprint} alt="loot crate" width="80%"/>
                 </div>
                 
             </PresalePanelWrapper>

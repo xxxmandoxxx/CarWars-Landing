@@ -44,13 +44,16 @@ class App extends Component {
     } else {
        view = <Main regDone={this.regDone.bind(this)}  />
     }
+   
 
     return (
       <div className="App">
         <div className="container">
           <Fog />
           {view}
-          <Footer />
+          <div className="fixed-bottom">
+            <Footer />
+          </div>
         </div>
       </div>
     );

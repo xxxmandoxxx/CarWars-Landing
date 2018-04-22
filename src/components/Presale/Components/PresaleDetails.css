@@ -22,7 +22,6 @@
 
 .presaledetails-even {
     display: block;
-    height: 250px;
     margin: 25px -25px 0px -25px;
     padding: 25px;
     background-color: rgb(86, 162, 253, 0.1);
@@ -30,7 +29,6 @@
 
 .presaledetails-odd {
     display: block;
-    height: 250px;
     text-align: right;
     margin: 25px -25px 0px -25px;
     background-color: rgba(212, 212, 212, 0.3);
@@ -45,11 +43,13 @@
 .image-container-odd {
     text-align: left;
     margin-top: 90px;
-    margin-left: -50px;
+    margin-left: -35px;
+    margin-bottom: -25px;
 }
 
 .image-container-odd > img {
     width: 500px;
+    /** -webkit-filter: hue-rotate(100deg); **/
 }
 
 .header-factory {
@@ -59,10 +59,41 @@
 
 .content-factory {
     padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.hiddenBottom {
+    display: none;
+}
+
+.hiddenTop {
+    display: block;
 }
 
 @media only screen and (max-width: 991px) {
     .image-container-odd, .image-container-even {
+        display: block;
+        margin-top: 0px;
+        height: 100px;
+    }
+
+    .image-container-odd > img {
+        width: 200px;
+        margin-left:25px;
+    }
+
+    .content-factory {
+        padding-bottom: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hiddenBottom {
+        display: block;
+    }
+    
+    .hiddenTop {
         display: none;
     }
 }
