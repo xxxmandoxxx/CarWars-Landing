@@ -1,0 +1,13 @@
+.giftAnnouncement-text {
+    display: inline-block;
+}
+
+.giftAnnouncement-button {
+    display: inline-block;
+}
+
+.giftAnnouncement-button > button {
+    background: none;
+    border-radius: 5px;
+    margin-left: 25px;
+}

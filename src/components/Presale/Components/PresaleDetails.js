@@ -4,6 +4,7 @@ import './PresaleDetails.css';
 import CollectImage from '../img/collect_image.png';
 import CompeteImage from '../img/carWars_competing.png';
 import DiscoverImage from '../img/discover_image.png';
+import JoinUs from '../utils/JoinUs';
 
 
 const presaleDetails = (props) => {
@@ -24,6 +25,7 @@ const presaleDetails = (props) => {
                 </div>
                 <div className="presaledetails-content">
                     {headerContent}
+                    <JoinUs />
                 </div>
                 <div className="presaledetails-even row">
                     <div className="col-md-8">

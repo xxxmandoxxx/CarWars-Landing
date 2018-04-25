@@ -1,5 +1,5 @@
 .myAccountTx {
-    margin-top: 50px;
+    margin-top: 25px;
     /** border-bottom: solid 1px #56a2fd **/
     background-color: rgba(100,100,100, 0.2);
     padding: 25px;
@@ -21,4 +21,13 @@
 .txLink {
     text-decoration: underline;
     color: #56a2fd;
+}
+
+.myAccountInfo-social {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.myAccountInfo-social > a > img {
+    margin: 0 15px 0 15px;
 }

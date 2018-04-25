@@ -24,7 +24,6 @@ class MyAccount extends Component {
         this.getTxforAccount = getTxforAccount.bind(this);
         this.packagesOwned = packagesOwned.bind(this);
         this.container = null;
-        this.intervalID = null;
 
         this.state = {
             loadingTx: true,
@@ -36,6 +35,7 @@ class MyAccount extends Component {
             pkgAllowed: 25,
             gifts: 0,
             isMainNet: (this.props.contract != null),
+            PurchaseEvent: this.props.contract.Purchased(),
         }
 
     }
@@ -47,14 +47,13 @@ class MyAccount extends Component {
         this.getTxforAccount(this.state.account);
         this.packagesOwned();
 
-        this.PurchaseEvent = this.props.contract.Purchased();
-        this.intervalID = this.PurchaseEvent.watch((error, result) => {
+        this.state.PurchaseEvent.watch((error, result) => {
               this.purchaseEventHandler(result);
           });
     }
 
     componentWillUnmount () {
-        clearInterval(this.intervalID);
+        this.PurchaseEvent= null;
     }
 
     checkAccountChangedHandler = () => {

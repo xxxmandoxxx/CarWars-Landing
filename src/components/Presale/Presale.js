@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastr";
 import SwitchToMainNet from './Components/SwitchToMainNet';
 import ModalWrapper from './utils/ModalWrapper';
 import PresaleDetails from './Components/PresaleDetails';
+import GiftAnnouncement from './utils/GiftAnnouncement';
 
 import { buyPackageUpTo, setCurrentPrice, packagesOwned, claimPackages } from './utils/contractFunctions';
 
@@ -18,10 +19,12 @@ class Presale extends Component {
 
     constructor(props) {
         super(props);
-        this.intervalID = 0;
         this.setCurrentPrice = setCurrentPrice.bind(this);
         this.packagesOwned = packagesOwned.bind(this);
         this.container = null;
+        this.claimPackages = claimPackages.bind(this);
+
+        this.claimButton = React.createRef();
 
         this.state = {
             isMainNet: (this.props.contract != null),
@@ -38,6 +41,7 @@ class Presale extends Component {
             showModal: false,
             error: null,
             gifts: 0,
+            PurchaseEvent: this.props.contract.Purchased()
         }
 
         
@@ -50,8 +54,8 @@ class Presale extends Component {
       this.setCurrentPrice();
       this.packagesOwned() ;
 
-      this.PurchaseEvent = this.props.contract.Purchased();
-      this.intervalID = this.PurchaseEvent.watch((error, result) => {
+      
+      this.state.PurchaseEvent.watch((error, result) => {
             this.purchaseEventHandler(result);
         });
     }
@@ -61,8 +65,7 @@ class Presale extends Component {
     }
 
     componentWillUnmount() {
-        clearInterval(this.intervalID);
-
+        this.PurchaseEvent= null;
     }
 
     modalCloseHandler = () => {
@@ -73,7 +76,7 @@ class Presale extends Component {
         console.log("Purchase Event");
         this.setCurrentPrice();
         this.showPurchesTicker(result);
-        if (this.state.txHash.toLowerCase() === result.transactionHash.toLowerCase()) {
+        if (this.state.txHash === result.transactionHash.toLowerCase()) {
             this.packagesOwned()
             this.setState({loading: false, pkgBought: result.args.pkgsBought.toNumber(), ethSpend: result.args.spend.toNumber(), showModal: true})
         }
@@ -154,6 +157,7 @@ class Presale extends Component {
         } else {
             return (
             <div>
+                {this.state.gifts > 0 ? <GiftAnnouncement gifts={this.state.gifts} claimPkgs={this.claimPackages} claimRef={this.claimButton}/> : null}
                  <ToastContainer
                     ref={ref => this.container = ref}
                     className="toast-bottom-right"/>

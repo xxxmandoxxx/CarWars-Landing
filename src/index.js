@@ -8,6 +8,7 @@ import PresaleContainer from './PresaleContainer';
 import MyAccount from './components/MyAccount/MyAccountContainer';
 import Error404 from './Error404';
 import Footer from './components/Footer';
+import Faq from './components/Faq/Faq';
 
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
@@ -42,6 +43,7 @@ ReactDOM.render(
             <li className="nav-item"><NavLink exact to="/about" activeClassName="nav-active">About</NavLink></li>
             <li className="nav-item"><NavLink exact to="/presale" activeClassName="nav-active">Pre-Sale</NavLink></li>
             <li className="nav-item"><NavLink exact to="/myAccount" activeClassName="nav-active">My Account</NavLink></li>
+            <li className="nav-item"><NavLink exact to="/faq" activeClassName="nav-active">FAQ</NavLink></li>
 
         </ul>
         </nav>
@@ -50,12 +52,14 @@ ReactDOM.render(
             <Route path="/about" component={About}/>
             <Route path="/presale" component={PresaleContainer}/>
             <Route path="/myAccount" component={MyAccount}/>
+            <Route path="/faq" component={Faq}/>
             <Route component={Error404} />
         </Switch>
         <Switch>
             <Route exact path="/about" component={Footer}/>
             <Route exact path="/presale" component={Footer}/>
             <Route exact path="/myAccount" component={Footer}/>
+            <Route exact path="/faq" component={Footer}/>
         </Switch>
     </div>
 </BrowserRouter>

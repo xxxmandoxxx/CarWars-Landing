@@ -9,6 +9,7 @@ const loading = (props) => {
             <div className="Loading">
                 <h4>Loading Web3...</h4>
                 <p>Please install MetaMask or sign in to Portis</p>
+                <button className='btn btn-primary btn-lg' onClick={props.loadPortis}>Open Portis</button>
                 <div className="LoadingLogos">
                     <img src={MetaMaksLogo} width="120px" alt="MetaMask logo"/>
                     <img src={PortisLogo} width="70px" alt="Portis Logo" />

@@ -11,10 +11,12 @@ export default class Web3Container extends React.Component {
 
   async componentDidMount () {
     try {
-      const web3 = await getWeb3()
+      let web3 = await getWeb3()
       const accounts = await getAccounts(web3)
       const contract = await getContract(web3)
       const networkID = await web3.eth.net.getId()
+
+     
       this.setState({ web3, accounts, contract, networkID })
     } catch (error) {
       // alert(`Failed to load web3, accounts, or contract. Check console for details.`)
@@ -23,7 +25,20 @@ export default class Web3Container extends React.Component {
   }
 
   render () {
-    const { web3, accounts, contract } = this.state
+
+    let { web3, accounts, contract } = this.state
+    
+    if (this.props.web3Portis) {
+      try {
+      
+        web3 = this.props.web3Portis;
+        accounts =  this.props.portisAccounts;
+        contract =  this.props.portisContract;
+        return this.props.render({ web3, accounts, contract })
+      } catch (error) {
+        console.log("Error loading Portis: " + error)
+      }
+    }
   
     if (web3 && this.state.networkID !== USEDNETWORK) {
       return <Web3ErrorWrapper><SwitchToMainNet /></Web3ErrorWrapper>

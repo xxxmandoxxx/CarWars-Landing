@@ -16,7 +16,7 @@ const myAccountWrapper = (props) => {
                             </div>
                             <div className="myaccount-panel-bottom animated fadeIn">
                                 <div>
-                                    To buy more packages please go to our Pre-Sale page.
+                                    To buy more packages please go to our Pre-Sale page. Tx information is provided by Etherscan.io
                                 </div>
                             </div>
                         </div>

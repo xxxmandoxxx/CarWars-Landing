@@ -13,7 +13,7 @@ export function buyPackageUpTo(event) {
             {from: this.state.account, gas: 80000, value: this.state.web3.utils.toWei(ethAmount, "ether"), gasPrice: this.state.web3.utils.toWei("10", 'gwei')})
             .then(async (res)  =>  {
                 console.log(res.tx);
-                this.setState({loading: true, txHash: res.tx})
+                this.setState({loading: true, txHash: res.tx.toLowerCase()})
             }).catch((error) => {
                 console.log(error);
                 this.setState({loading: false,  showModal: true, error: error, txHash: error.tx})
@@ -24,10 +24,13 @@ export function buyPackageUpTo(event) {
 
 export function claimPackages(event) {
     event.preventDefault();
+    event.target.disabled = "true";
 
     this.props.contract.claimPackages(
         {from: this.state.account, gas: 80000, gasPrice: this.state.web3.utils.toWei("10", 'gwei')})
         .then(async (res)  =>  {
+            this.setState({gifts: 0});
+            this.packagesOwned();
             console.log(res.tx);
         }).catch((error) => {
             console.log(error);

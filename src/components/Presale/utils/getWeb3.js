@@ -9,11 +9,12 @@ const resolveWeb3 = (resolve) => {
     console.log(`Injected web3 detected. `)
     web3 = new Web3(web3.currentProvider)
   } else {
-    console.log(`No web3 instance injected, using Portis web3.`)
-    const portis = require('portis');
+    //console.log(`No web3 instance injected, using Portis web3.`)
+    //const portis = require('portis');
     //const provider = new Web3.providers.HttpProvider(localProvider)
-    web3 = new Web3(new portis.Provider({ network: 'ropsten' }));
+    //web3 = new Web3(new portis.Provider({ network: 'ropsten' }));
     //web3 = new Web3(provider)
+    web3 = null;
   }
 
   resolve(web3)
