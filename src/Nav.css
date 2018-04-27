@@ -4,7 +4,7 @@ nav {
     right: 0;
     margin-right: 5px;
     padding-top: 5px;
-    background-color: rgba(2,5,8,0.3);
+    background-color: rgba(2,5,8,0.1);
     width: 100%;
     text-align: right;
 }
@@ -30,4 +30,10 @@ nav {
 
 .nav-item:hover > a{
     color: #56a2fd;
+}
+
+.nav-logo {
+    float: left;
+    width: 60px;
+    margin-left: 10px;
 }

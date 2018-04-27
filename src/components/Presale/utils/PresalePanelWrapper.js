@@ -16,8 +16,7 @@ const presalePanelWrapper = (props) => {
                             </div>
                             <div className="presale-panel-bottom animated fadeIn">
                                 <div>
-                                    Each pre-sale package contains 3 unique blue prints.
-                                    All pre-sale blue prints carry a unique mark that will never be seen again.
+                                As a presale participant, you receive 3x blueprints per package. Each blueprint equates to a vehicle in Car Wars, and yours contains a feature that will never be repeated.  Don't delay, supply is strictly limited
                                 </div>
                             </div>
                         </div>

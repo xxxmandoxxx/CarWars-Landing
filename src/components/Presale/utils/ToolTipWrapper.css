@@ -15,10 +15,10 @@
 
     /* Position the tooltip */
     position: absolute;
-    z-index: 1000;
-    left: 150px;
+    z-index: 1001;
+    left: 100px;
     top: -15px;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .Gtooltip:hover .Gtooltiptext {

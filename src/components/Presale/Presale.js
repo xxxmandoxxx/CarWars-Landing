@@ -10,6 +10,8 @@ import PresaleDetails from './Components/PresaleDetails';
 import GiftAnnouncement from './utils/GiftAnnouncement';
 
 import { buyPackageUpTo, setCurrentPrice, packagesOwned, claimPackages } from './utils/contractFunctions';
+import {PRESALEDETAILSTEXT} from './Components/textObjects';
+
 
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-116684519-1');
@@ -129,8 +131,8 @@ class Presale extends Component {
             </ModalWrapper>
         } else if (this.state.showModal && this.state.error && this.state.txHash){
             modal = <ModalWrapper close={this.modalCloseHandler} title={<h3>Transaction Failed</h3>}>
-            <p>There was an error with your transaction. Maybe someone got in before you and grabbed your pakages.
-                To ensure this doesn't happen again turn "Guarantee Price" on and add a little extra gas. Just in case.</p>
+            <p>There was an error with your transaction. Someone may have beat you to the purchase.
+                 To avoid this turn on "prioritise transaction" and add a little extra gas to get ahead of the rest..</p>
             <ul>
                 <li>Etherscan: <a href={"https://etherscan.io/tx/" + this.state.txHash}
             className="white" target="_blank" rel="noopener noreferrer" >
@@ -166,7 +168,17 @@ class Presale extends Component {
                 buyPackageUpTo={buyPackageUpTo.bind(this)} 
                 packagesOwned={this.packagesOwned.bind(this)}
                 skip={this.skipLoading.bind(this)}/>
-                <PresaleDetails />
+                
+                <div className="container">
+                    <div className="PresaleDetails">
+                        <div className="presaledetails-header">
+                            <h1>Pre-Sale Details</h1>
+                        </div>
+                        <div className="presaledetails-content">
+                            {PRESALEDETAILSTEXT} <br /> <br />
+                         </div>
+                    </div>
+                </div>
             </div>)
         }
         

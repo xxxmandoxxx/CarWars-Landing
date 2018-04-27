@@ -60,8 +60,8 @@ class PresaleForm extends Component {
                 Packages: {this.state.pkgAmount}<br />
                 
                 <form onSubmit={this.formSubmitHandler} className="PresaleForm-form">
-                    <ToolTipWrapper tooltiptext="This will add ETH 0.01 to the transaction to guarantee that you will get the amount of packages selected. Any excess ETH will be refunded in full.">
-                        Guarantee purchase:
+                    <ToolTipWrapper tooltiptext="This will add ETH 0.01 to the transaction to prevent sniping. Any excess ETH will be refunded in full.">
+                        Prioritise transaction:
                     </ToolTipWrapper>
                     <div className="switch">
                         <input type="checkbox" name="securePkg" onChange={this.setMultiplierHandler} defaultChecked="true"/>
@@ -72,6 +72,11 @@ class PresaleForm extends Component {
                     <input type='number' min='1' max='25' name='upTo' hidden='true' readOnly="true" value={this.state.pkgAmount}/>
                     <div className="total"><h4>Total: {(this.props.currentPrice * this.state.pkgAmount + this.state.multiplier).toFixed(5)}ETH </h4><br /></div>
                     <button type='submit' className="btn btn-primary">Buy {this.state.pkgAmount} Packages</button>
+                    <div className="PresaleForm-safetycheck">
+                        <ToolTipWrapper tooltiptext="When confirming the transaction in MetaMask or Portis, please confirm that the address matches what is posted on our social media channels.">
+                            Safety Check
+                        </ToolTipWrapper>
+                    </div>
                 </form>
                 <div className="presale-image presale-image-mini">
                             <img src={blueprint} alt="loot crate" width="80%"/>

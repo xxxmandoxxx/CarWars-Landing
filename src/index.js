@@ -13,6 +13,7 @@ import Faq from './components/Faq/Faq';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 
+
 //import createBrowserHistory from 'history/createBrowserHistory'
 //const history = createBrowserHistory();
 
@@ -38,6 +39,11 @@ ReactDOM.render(
     
     <div>
         <nav>
+        <div className="nav-logo">
+            <NavLink exact to="/">
+                <img src="./img/CarWars_icon.png" width="100%" />
+            </NavLink>
+        </div>
         <ul>
             <li className="nav-item"><NavLink exact to="/" activeClassName="nav-active">Home</NavLink></li>
             <li className="nav-item"><NavLink exact to="/about" activeClassName="nav-active">About</NavLink></li>

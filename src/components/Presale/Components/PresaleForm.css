@@ -85,6 +85,12 @@
     outline: none;
 }
 
+.PresaleForm-safetycheck {
+    display: inline;
+    margin-left: 15px;
+    width: 100%;
+}
+
 
 @keyframes hovering {
     0% {
