@@ -8,7 +8,6 @@
    animation-delay: 0.6s;
 }
 
-
 .email {
     outline: none;
     background: rgba(0,0,0,0.6);
@@ -26,11 +25,6 @@
     margin: auto;
 }
 
-.email-button {
-    background: none;
-    border: none;
-    outline: none;
-}
 
 .email-wrapper {
     display: table-cell;
@@ -38,12 +32,18 @@
 
 }
 
+.oldbutton-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
 .button-wrapper {
     display: table-cell;
     vertical-align: middle;
 }
 
-.email-button {
+
+.oldemail-button {
     width: 100px; 
     height: 100px;
     margin-left: 10px; 
@@ -51,8 +51,16 @@
     background-size: cover;
 }
 
+.email-button {
+    width: 120px;
+    height: 60px;
+    margin-left: 5px; 
+    font-size: 14pt !important;
+    padding: 5px !important;
+}
 
-.email-button:hover{
+
+.oldemail-button:hover{
     background: url('/img/StartButtonOn.svg');
     background-size: cover;
 }
@@ -75,7 +83,7 @@
 
 @media only screen and (max-width: 780px)
    {  
-    .email-button {
+    .oldemail-button {
             margin-top: 25px;
             width: 64px;
             height: 64px;
@@ -95,7 +103,7 @@
     
     }
     
-    .button-wrapper {
+    .oldbutton-wrapper {
         display: block;
         vertical-align: middle;
     }
@@ -103,5 +111,14 @@
     .sub-title {
     display: none;
     }
+
+    .email-button {
+        width: 80px;
+        height: 60px;
+        margin-left: 5px; 
+        font-size: 10pt !important;
+        padding: 5px !important;
+    }
+    
 
 }

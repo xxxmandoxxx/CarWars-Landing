@@ -21,14 +21,14 @@
 
 
 .presaledetails-even {
-    display: block;
+    
     margin: 25px -25px 0px -25px;
     padding: 25px;
     background-color: rgb(86, 162, 253, 0.1);
 }
 
 .presaledetails-odd {
-    display: block;
+    
     text-align: right;
     margin: 25px -25px 0px -25px;
     background-color: rgba(212, 212, 212, 0.3);
@@ -58,7 +58,7 @@
 }
 
 .content-factory {
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     padding-left: 50px;
     padding-right: 50px;
 }

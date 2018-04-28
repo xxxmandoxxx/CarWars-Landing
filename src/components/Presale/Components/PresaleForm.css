@@ -50,7 +50,7 @@
 
 .PresaleForm-form {
     margin-top: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .rangeslider-horizontal .rangeslider__fill {
@@ -91,6 +91,18 @@
     width: 100%;
 }
 
+.total {
+    font-size: 16pt;
+    margin-top: 75px;
+    margin-bottom: -25px;
+    text-align: right;
+    
+}
+
+.total > span {
+    border-bottom: 1px solid #56a2fd ;
+}
+
 
 @keyframes hovering {
     0% {
@@ -118,8 +130,8 @@
         display: block;
         position: absolute;
         top: 17%;
-        left: 35%;
-        width: 50%;
+        left: 55%;
+        width: 40%;
     }
 }
 
@@ -127,8 +139,8 @@
     .presale-image-mini {
         display: block;
         position: absolute;
-        top: 20%;
-        left: 55%;
+        top: 28%;
+        left: 50%;
         width: 50%;
     }
 
@@ -136,6 +148,22 @@
         transform: rotateY(180deg);
         box-shadow: 1px 1px 15px 3px #56a2fd;
         animation: none;
+    }
+
+    .PresaleForm-safetycheck {
+        display: block;
+        margin-top: 15px;
+        margin-left: 0px;
+        
+    }
+
+    .presale-panel{
+        margin-top: 0px;
+        padding-top: 25px;
+    }
+
+    .total {
+       padding-top: 15px;
     }
 
 }

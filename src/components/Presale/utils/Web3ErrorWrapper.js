@@ -5,8 +5,8 @@ const web3ErrorWrapper = (props) => {
     return(
         <div className="ErrorWrapper">
                 <div className='container'>
-                    <div className="row col-xs-12">
-                       <div className="error-wrapper-content col-sx-6 col-xs-offset-2">
+                    <div className="row">
+                       <div className="error-wrapper-content .col-lg-6 mx-auto">
                             {props.children}
                        </div>
                     </div>

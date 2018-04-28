@@ -10,12 +10,12 @@ const presaleLoading = (props) => {
             <div className="text-center animated fadeIn">
                 <div className="animated slideInUp loadingMessage">
                     Transaction received! <br />
-                    Waiting for transaction to be confirmed:<br />
+                    Waiting for purchage event to be triggered:<br />
                     <a href={"https://etherscan.io/tx/" + props.txHash} className="txLink" target="_blank" rel="noopener noreferrer" >{props.txHash.substring(0,15)+"..."}</a>
                 </div>
                 <div>
-                    <p><small>You don't need to wait until your transaction has been mined. It could take a while. Check "My Account" for your transaction status.</small></p>
-                    <button className="btn btn-primary btn-xs" onClick={props.skip}>skip</button> 
+                    <p><small>Not all browsers are supported. You don't need to wait until the event has been triggered. Check "My Account" for your transaction status.</small></p>
+                    <button className="btn btn-primary btn-xs" onClick={props.skip}>Continue</button> 
                 </div>
                 <div className="loading-image-container">
                     <img src={loadingGif} width="150px" alt="loading animation" />
@@ -27,10 +27,10 @@ const presaleLoading = (props) => {
         return(
             <div className="text-center animated fadeIn">
                 <div className="animated slideInUp loadingMessage">
-                    Waiting for transaciton to be sent...
+                    Waiting for transaciton...
                 </div>
                 <div>
-                    <p><small>You don't need to wait until your transaction has been sent. It could take a while. Check "My Account" for your transaction status.</small></p>
+                    <p><small>You don't need to wait until your transaction has been confirmed. It could take a while. Check "My Account" for your transaction status.</small></p>
                     <button className="btn btn-primary btn-xs" onClick={props.skip}>skip</button> 
                 </div>
                 <div className="loading-image-container">

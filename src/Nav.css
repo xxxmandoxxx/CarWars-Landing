@@ -1,12 +1,8 @@
-nav {
-    position: fixed;
-    z-index: 1000;
-    right: 0;
-    margin-right: 5px;
-    padding-top: 5px;
-    background-color: rgba(2,5,8,0.1);
+
+.navbar
+{
     width: 100%;
-    text-align: right;
+    text-align: right; 
 }
 
 .nav-item { 
@@ -34,6 +30,6 @@ nav {
 
 .nav-logo {
     float: left;
-    width: 60px;
+    width: 180px;
     margin-left: 10px;
 }

@@ -20,7 +20,7 @@ class PresaleContainer extends Component {
         console.log(`Loading Portis.`)
         const portis = require('portis');
         //const provider = new Web3.providers.HttpProvider(localProvider)
-        const web3 = new Web3(new portis.Provider({ network: 'ropsten' }));
+        const web3 = new Web3(new portis.Provider({ network: 'ropsten', appName: "CarWars.cc" }));
         const accounts = await getAccounts(web3)
         const contract = await getContract(web3)
 

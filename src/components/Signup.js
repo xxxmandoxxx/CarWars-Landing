@@ -1,6 +1,8 @@
 import  React  from 'react';
 import './Signup.css';
 
+import JoinPresale from './Presale/Components/JoinPresale';
+
 
 class Signup extends React.Component {
    
@@ -31,6 +33,7 @@ class Signup extends React.Component {
         <div className="signup-box animated fadeIn">
         <p className="sub-title">Gain exclusive access to the first builds of the newly discovered ancient machines</p>
             <div id="mc_embed_signup">
+                <JoinPresale />
                 <form onSubmit={this.handleSubmit} name="SignUp">
                     <div id="mc_embed_signup_scroll">
                         <div>
@@ -39,7 +42,7 @@ class Signup extends React.Component {
                                     <input autoFocus type="email" name="EMAIL" className="required email" id="mce-EMAIL" placeholder="@ Email" autoComplete="off" minLength="3" maxLength="64" required="true"/>
                                 </div>
                                 <div className="button-wrapper">
-                                    <button type="submit"  name="subscribe" id="mc-embedded-subscribe" className="email-button"></button>
+                                    <button type="submit"  name="subscribe" id="mc-embedded-subscribe" className="email-button buttonShine">Sign Up</button>
                                 </div>
                             </div>
                            
@@ -52,6 +55,7 @@ class Signup extends React.Component {
                         
                     </div>
                 </form>
+               
             </div>
         </div>
     )

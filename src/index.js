@@ -36,23 +36,28 @@ ReactDOM.render(
 
 
 <BrowserRouter>
-    
     <div>
-        <nav>
-        <div className="nav-logo">
-            <NavLink exact to="/">
-                <img src="./img/CarWars_icon.png" width="100%" />
-            </NavLink>
-        </div>
-        <ul>
-            <li className="nav-item"><NavLink exact to="/" activeClassName="nav-active">Home</NavLink></li>
-            <li className="nav-item"><NavLink exact to="/about" activeClassName="nav-active">About</NavLink></li>
-            <li className="nav-item"><NavLink exact to="/presale" activeClassName="nav-active">Pre-Sale</NavLink></li>
-            <li className="nav-item"><NavLink exact to="/myAccount" activeClassName="nav-active">My Account</NavLink></li>
-            <li className="nav-item"><NavLink exact to="/faq" activeClassName="nav-active">FAQ</NavLink></li>
 
-        </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="nav-logo navbar-brand mr-auto">
+                        <NavLink exact to="/">
+                            <img src="./img/CarWars_Logo.png" width="100%" alt="CarWars.cc Logo"/>
+                        </NavLink>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav ml-auto">
+                        <li className="nav-item nav-link"><NavLink exact to="/" activeClassName="nav-active active" >Home</NavLink></li>
+                        <li className="nav-item nav-link"><NavLink exact to="/about" activeClassName="nav-active active">About</NavLink></li>
+                        <li className="nav-item nav-link"><NavLink exact to="/presale" activeClassName="nav-active active">Pre-Sale</NavLink></li>
+                        <li className="nav-item nav-link"><NavLink exact to="/myAccount" activeClassName="nav-active active">My Account</NavLink></li>
+                        <li className="nav-item nav-link"><NavLink exact to="/faq" activeClassName="nav-active active">FAQ</NavLink></li>
+                    </ul>
+            </div>
         </nav>
+
         <Switch>
             <Route exact path="/" component={App}/>
             <Route path="/about" component={About}/>

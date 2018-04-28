@@ -9,7 +9,7 @@
         text-align: center;
         color: #d3dadf; 
         margin: auto;
-        margin-top: 50px;
+        padding-top: 50px;
 }
 
 
@@ -18,8 +18,9 @@
    { 
         .title-text h1 {
                 font-size: 30px !important;
-                width: 80%;
-                margin-top: 50px;
+                width: 90%;
+                margin-bottom: 50px;
+                
         }
 
 }

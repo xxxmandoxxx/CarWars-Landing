@@ -6,8 +6,8 @@ const presalePanelWrapper = (props) => {
     return(
         <div className="PresaleForm">
                 <div className='container'>
-                    
-                        <div className="col-md-6 col-12 presale-panel">
+                    <div className="row">
+                        <div className="col-lg-6 col-12 presale-panel">
                             <div className="presale-panel-header animated fadeIn">
                                 <h2>??? / 5000 Packages Sold</h2>
                             </div>
@@ -20,10 +20,10 @@ const presalePanelWrapper = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6 presale-image">
+                        <div className="col-lg-6 presale-image animated fadeIn">
                             <img src={blueprint} alt="loot crate" width="100%"/>
                         </div>
-                   
+                   </div>
                 </div>
             </div>
     )

@@ -13,7 +13,7 @@ export function buyPackageUpTo(event) {
             {from: this.state.account, gas: 80000, value: this.state.web3.utils.toWei(ethAmount, "ether"), gasPrice: this.state.web3.utils.toWei("10", 'gwei')})
             .then(async (res)  =>  {
                 console.log(res.tx);
-                this.setState({loading: true, txHash: res.tx.toLowerCase()})
+                this.setState({txHash: res.tx.toLowerCase()})
             }).catch((error) => {
                 console.log(error);
                 this.setState({loading: false,  showModal: true, error: error, txHash: error.tx})

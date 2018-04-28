@@ -56,6 +56,19 @@ opacity: 1;
   animation-delay: 0s;
 }
 
+.margin-top-md {
+  margin-top: 15px;
+}
+
+.btn-primary {
+  background-color: #56a2fd;
+  border: 1px solid rgba(255,255,255,0.5);
+  transition: background-color, border;
+  transition-duration: 0.5s;
+}
+.btn-primary:hover { 
+  background-color: #0c77fa;
+}
 @keyframes shake-little {
   0% {
     transform: translate(0px, 0px) rotate(0deg);
@@ -208,3 +221,17 @@ opacity: 1;
     transform: translate(0px, 1px) rotate(0.5deg);
   }
 }
+
+
+@media only screen and (max-width: 780px)
+{ 
+  .fixed-bottom {
+    position: relative !important;
+    margin-top: 25px;
+  }
+
+  body {
+    overflow: visible !important;
+  }
+
+ }

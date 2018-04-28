@@ -10,7 +10,7 @@ import PresaleDetails from './Components/PresaleDetails';
 import GiftAnnouncement from './utils/GiftAnnouncement';
 
 import { buyPackageUpTo, setCurrentPrice, packagesOwned, claimPackages } from './utils/contractFunctions';
-import {PRESALEDETAILSTEXT} from './Components/textObjects';
+//import {PRESALEDETAILSTEXT} from './Components/textObjects';
 
 
 import ReactGA from 'react-ga';
@@ -169,16 +169,7 @@ class Presale extends Component {
                 packagesOwned={this.packagesOwned.bind(this)}
                 skip={this.skipLoading.bind(this)}/>
                 
-                <div className="container">
-                    <div className="PresaleDetails">
-                        <div className="presaledetails-header">
-                            <h1>Pre-Sale Details</h1>
-                        </div>
-                        <div className="presaledetails-content">
-                            {PRESALEDETAILSTEXT} <br /> <br />
-                         </div>
-                    </div>
-                </div>
+                <PresaleDetails />
             </div>)
         }
         

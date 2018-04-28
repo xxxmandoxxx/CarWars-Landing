@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import $ from 'jquery';
 import {helper} from './helper';
 import JoinUs from "../Presale/utils/JoinUs";
+import JoinPresale from '../Presale/Components/JoinPresale';
 
 import './Faq.css';
 
@@ -17,7 +18,7 @@ class Faq extends Component {
 
     render() {
         return(
-            <div className='container background-dark'>
+            <div className='container background-dark animated fadeIn'>
                 <h1 className="faq-title-big">FAQ</h1>
                 <div className="FAQContainer">
                     <section className="cd-faq">
@@ -122,7 +123,7 @@ class Faq extends Component {
                                                 <p>To buy packages, go to our Pre-Sale site. Select the amount of packages you want to buy and click "Buy Pakcages". This will generate a transaction request. Portis or MetaMask will ask you to sign this transaction. Check gas details and click "Submit" to sign transaction.</p>
                                                 <img src="../../img/Pre-Sale_screenshot.jpg" alt="Pre-Sale Form" />
                                                 <p>Once the transaction has been sent to the network, you will see a loading screen. You can skip the loading screen as it can take some time until your transaction has been verified. You can check all your transactions on the "My Account" page</p>
-                                                <img src="../../img/waiting_for_Transaction.jpg" alst="Pre-Sale Loading" />
+                                                <img src="../../img/waiting_for_Transaction.jpg" alt="Pre-Sale Loading" />
                                             </div>
                                         </div> 
                                 </li>
@@ -165,10 +166,10 @@ class Faq extends Component {
                                 </li>
 
                                  <li>
-                                    <a className="cd-faq-trigger" href="#0">What does "Guarantee Package" do?</a>
+                                    <a className="cd-faq-trigger" href="#0">What does "Prioritise transaction" do?</a>
                                     <div className="cd-faq-content">
                                         <div className="Faq-answer">
-                                            <p>Each time a package is sold, the price of a package increases slightly. When you send a transaction to the network, you end up in a que and there might be other players buying packages at the same time. If they get processed before you, the price will have gone up and the amount send in your transaction won't be enough to buy the selected amount of packages. "Guarantee Price" adds 0.01 ETH to your transaction to prevent this from happening.</p>
+                                            <p>Each time a package is sold, the price of a package increases slightly. When you send a transaction to the network, you end up in a que and there might be other players buying packages at the same time. If they get processed before you, the price will have gone up and the amount send in your transaction won't be enough to buy the selected amount of packages. "Prioritise transaction" adds 0.01 ETH to your transaction to prevent this from happening.</p>
                                             <p>All unused funds will be refunded to your wallet. We will never keep any access ETH sent to our contracts.</p>
                                         </div>
                                     </div> 
@@ -180,6 +181,7 @@ class Faq extends Component {
                     
                     </section>
                 </div>
+                <JoinPresale />
             </div>
                 )
     }

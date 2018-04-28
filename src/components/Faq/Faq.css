@@ -33,6 +33,13 @@ Primary style
       padding: 0;
   }
 
+  .cd-faq-categories a {
+    background-color:  #343a40!important;
+  }
+
+  
+ 
+
   .faq-title-big {
       color: #d3dadf;
       margin-top: 50px;
@@ -44,13 +51,14 @@ Primary style
 
   .background-dark {
     background-color: rgba(0,0,0,0.6);
-    margin-bottom: -200px;
-    padding-bottom: 200px;
+    
   }
 
   .Faq-answer > img {
     width: 100%;
   }
+
+ 
 
   
 
