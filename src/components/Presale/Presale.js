@@ -114,6 +114,10 @@ class Presale extends Component {
         }, 1000)
     }
 
+    backToTopHandler = () => {
+        window.scrollTo(0,0);
+    }
+
     render() {
         let modal = null;
 
@@ -135,7 +139,7 @@ class Presale extends Component {
                  To avoid this turn on "prioritise transaction" and add a little extra gas to get ahead of the rest..</p>
             <ul>
                 <li>Etherscan: <a href={"https://etherscan.io/tx/" + this.state.txHash}
-            className="white" target="_blank" rel="noopener noreferrer" >
+            className="txLink" target="_blank" rel="noopener noreferrer" >
             {this.state.txHash.substring(0,15)+"..."}</a></li>
                 <li>ETH spent: <strong>0</strong></li>
             </ul>
@@ -170,6 +174,9 @@ class Presale extends Component {
                 skip={this.skipLoading.bind(this)}/>
                 
                 <PresaleDetails />
+                <div className="backToTop">
+                    <button onClick={this.backToTopHandler} className="btn btn-primary ml-auto">Back to Top</button>
+                </div>
             </div>)
         }
         

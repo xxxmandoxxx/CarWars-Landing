@@ -33,3 +33,7 @@
     width: 180px;
     margin-left: 10px;
 }
+
+.bg-dark {
+    background-color: rgb(27,32,40) !important;
+}

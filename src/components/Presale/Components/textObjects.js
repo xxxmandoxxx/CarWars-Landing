@@ -2,7 +2,7 @@ import React from 'react';
 
 export const PRESALEDETAILSTEXT = <div>
 <p>Crypto gaming adds a great new dimension to traditional gaming. You have true ownership of your crypto collectible (ERC721 Token). This allows you to do with it whatever you want to even outside of the CarWars universe. This also makes it possible to generate great value with your unique assets.</p> 
-<p>Crypto gaming is about value generation. We are building a new industry. In the near future we will see the first full time crypto gaming professionals. Instead of driving Uber, renting out a room through AirB&B or day trading Bitcoin, some will be playing crypto games and earn their living while having fun. Our unique game economics will give you the opportunity to discover rare and valuable assets which when played right can generate great value.</p>
+<p>An important part of Crypto Gaming is value generation. We are building a new industry. In the near future we will see the first full time crypto gaming professionals. Instead of driving Uber, renting out a room through AirB&B or day trading Bitcoin, some will be playing crypto games and earn their living while having fun. Our unique game economics will give you the opportunity to discover rare assets which when played right can generate great value.</p>
 </div>
 
 

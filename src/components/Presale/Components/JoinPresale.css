@@ -19,7 +19,8 @@
     transition: all 0.2s ease-in-out;
     position: relative;
     overflow: hidden;
-    background-color:  transparent;
+    background-color: rgba(86, 162, 253, 0.5);
+    color: #fff;
   }
   .buttonShine:before {
     content: "";
@@ -39,7 +40,7 @@
     border-bottom: 4px solid #56a2fd;
   }
   .buttonShine:hover:before {
-    transform: skewX(-45deg) translateX(13.5em);
+    transform: skewX(-45deg) translateX(23.5em);
     transition: all 0.5s ease-in-out;
   }
 

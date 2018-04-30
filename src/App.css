@@ -69,6 +69,12 @@ opacity: 1;
 .btn-primary:hover { 
   background-color: #0c77fa;
 }
+
+#PT_IFRAME {
+  position: absolute !important;
+  margin-top: 60px !important;
+}
+
 @keyframes shake-little {
   0% {
     transform: translate(0px, 0px) rotate(0deg);
@@ -223,6 +229,7 @@ opacity: 1;
 }
 
 
+
 @media only screen and (max-width: 780px)
 { 
   .fixed-bottom {
@@ -233,5 +240,13 @@ opacity: 1;
   body {
     overflow: visible !important;
   }
+
+  .buttonShine {
+    background-color: #56a2fd !important;
+    color: #fff !important;
+    border-bottom: 4px solid #56a2fd !important;
+  }
+
+ 
 
  }

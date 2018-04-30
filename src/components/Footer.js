@@ -1,6 +1,7 @@
 import React from "react";
 import './Footer.css';
-import SocialBar from './SocialBar'
+import SocialBar from './SocialBar';
+import {Link} from 'react-router-dom';
 
 const footer = () => {
     return (
@@ -13,7 +14,7 @@ const footer = () => {
             <div className="footer-text">
                 &copy; 2018 Ether Games Pty Ltd <br/>
                 By signing up to our mailing list you agree 
-                to our <a className="txLink no-style" href="https://www.ethergames.com.au/privacypolicy" target="_blank" rel="noopener noreferrer">privacy policy.</a>. We won't do anything shady with your 
+                to our <a className="txLink no-style" href="https://www.ethergames.com.au/privacypolicy" target="_blank" rel="noopener noreferrer">privacy policy.</a> and <Link to="/terms" className="txLink">Terms of User</Link>. We won't do anything shady with your 
                 email address. We will keep it within MailChimp and every now and then, 
                 we will send you an email which will contain mostly good news. 
                 We will also tell you some secrets via email so keep an eye open for them. 
@@ -24,6 +25,7 @@ const footer = () => {
             <SocialBar />
             <div className="fotter-text-mobile">
             <a className="no-style" href="https://www.ethergames.com.au/privacypolicy" target="_blank" rel="noopener noreferrer">Privacy policy.</a>
+            <Link to="/terms" className="txLink">Terms of User</Link>
              <span>&nbsp;&nbsp;&copy; 2018 Ether Games Pty Ltd</span> 
             </div>
         </div>

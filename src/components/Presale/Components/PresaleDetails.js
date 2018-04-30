@@ -30,38 +30,38 @@ const presaleDetails = (props) => {
             </div>
            
             <div className="presaledetails-even row animated fadeInLeft">
-                <div className="col-md-8">
+                <div className="col-lg-8">
                     <h3 className="blue">Collect</h3>
                     {GAMEPLAYCOLLECTTEXT}
                 </div>
-                <div className="col-md-4">
+                <div className="col-lg-4">
                     <div className="image-container-even">
                         <img src={CollectImage} height="100%" alt="CarWars Collect" />
                     </div>
                 </div>
             </div>
             <div className="presaledetails-odd row animated fadeInRight">
-                <div className="col-md-4 hiddenTop">
+                <div className="col-lg-4 hiddenTop">
                     <div className="image-container-odd">
-                            <img src={CompeteImage} width="100%" alt="CarWars Collect" />
+                            <img src={CompeteImage} width="100%" alt="CarWars Collect" className={props.animated ? "carAnimated" : "nonAnimation" } onClick={props.clickImage} />
                         </div>
                 </div>
-                <div className="col-md-8">
+                <div className="col-lg-8">
                     <h3 className="blue">Compete</h3>
                     {GAMEPLAYCOMPETETEXT}
                 </div>
-                <div className="col-md-4 hiddenBottom">
+                <div className="col-lg-4 hiddenBottom">
                     <div className="image-container-odd">
                             <img src={CompeteImage} width="100%" alt="CarWars Collect" />
                         </div>
                 </div>
             </div>
             <div className="presaledetails-even row animated fadeInLeft">
-                <div className="col-md-8">
+                <div className="col-lg-8">
                     <h3 className="blue" >Discover</h3>
                     {GAMEPLAYDISCOVERTEXT}
                 </div>
-                <div className="col-md-4">
+                <div className="col-lg-4">
                 <div className="image-container-even">
                         <img src={DiscoverImage} height="100%" alt="CarWars Collect" />
                     </div>

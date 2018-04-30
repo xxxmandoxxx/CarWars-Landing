@@ -17,7 +17,7 @@ class PresaleForm extends Component {
 
         this.state = {
             pkgAmount: 1,
-            multiplier: 0.01,
+            multiplier: 0.001,
         }
     }
 
@@ -34,7 +34,7 @@ class PresaleForm extends Component {
 
     setMultiplierHandler = (value) => {
         if (value.target.checked) {
-            this.setState({multiplier: 0.01})
+            this.setState({multiplier: 0.001})
         } else {
             this.setState({multiplier: 0})
         }
@@ -69,7 +69,7 @@ class PresaleForm extends Component {
                     
                 </form> 
 
-                <ToolTipWrapper tooltiptext="This will add ETH 0.01 to the transaction to prevent sniping. Any excess ETH will be refunded in full.">
+                <ToolTipWrapper tooltiptext="This will add ETH 0.001 to the transaction to prevent sniping. Any excess ETH will be refunded in full.">
                     Prioritise transaction:
                 </ToolTipWrapper>
                 <div className="switch">

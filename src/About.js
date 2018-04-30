@@ -11,10 +11,22 @@ ReactGA.pageview(window.location.pathname + window.location.search);
 
 class About extends Component {
 
+    state = {
+        animated: false
+    }
+
+
+    carClickHandler = (event) => {
+        event.preventDefault();
+        const animated = this.state.animated
+        this.setState({animated: !animated})
+    }
+
     render () {
         return(
             <div className="About animated fadeIn">
-                <PresaleDetails site="About"/> 
+            <div id="carImage"></div>
+                <PresaleDetails site="About" animated={this.state.animated} clickImage={this.carClickHandler}/> 
             </div>
         )
     }

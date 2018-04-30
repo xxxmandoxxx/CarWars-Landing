@@ -1,13 +1,13 @@
 import initContract from 'truffle-contract'
 import { abi } from '../utils/Presale.abi.js';
 
-//const MAIN_NET = "1";
+const MAIN_NET = 1;
 //const RINKEBY = "4";
-const ROPSTEN = 3;
+//const ROPSTEN = 3;
 //const LOCAL = "5777"
 
-export const USEDNETWORK = ROPSTEN
-const ADDRESS = "0x3b007fC6230Bce86Ee1152bA495188C19E45CaaE"
+export const USEDNETWORK = MAIN_NET
+const ADDRESS = "0xB1C7C2D228e97b2FefcF5e1153e4A38547838DEe"
 
 
 const getContract = async (web3) => {

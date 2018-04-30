@@ -16,11 +16,73 @@
     margin-top: 15%;
 }
 
+.About .presaledetails-even img {
+    transition-property: filter;
+    transition-duration: 2s;
+    
+}
+
+.About .presaledetails-odd img {
+    position: relative;
+    cursor: pointer;
+    
+}
+.carAnimated {
+    animation: carRacing 2s 1;
+}
+
+
+.About .presaledetails-even img:hover {
+    -webkit-filter: hue-rotate(360deg); /* Safari 6.0 - 9.0 */
+    filter: hue-rotate(360deg);
+
+}
+
 
 @media only screen and (max-width: 780px) {
     .AboutContainer {
         height: calc(100% - 150px);
         overflow: scroll;
         overflow-x: hidden;
+    }
+}
+
+@keyframes hoveringEffect {
+    0% {
+        margin-top: -3px;
+        margin-bottom: 3px;
+    }
+
+
+    50% {
+        margin-top: 3px;
+        margin-bottom: -3px;
+    }
+
+    100% {
+        margin-top: -3px;
+        margin-bottom: 3px;
+    }
+}
+
+
+@keyframes carRacing {
+    0% {
+        right: 0px;
+    }
+
+    50% {
+        right: 1250px;
+        opacity: 0;
+    }
+
+    75% {
+        right: -250px;
+        opacity: 0;
+    }
+
+    100% {
+        right: 0px;
+        opacity: 1;
     }
 }

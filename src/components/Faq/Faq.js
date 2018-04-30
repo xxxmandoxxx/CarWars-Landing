@@ -169,7 +169,7 @@ class Faq extends Component {
                                     <a className="cd-faq-trigger" href="#0">What does "Prioritise transaction" do?</a>
                                     <div className="cd-faq-content">
                                         <div className="Faq-answer">
-                                            <p>Each time a package is sold, the price of a package increases slightly. When you send a transaction to the network, you end up in a que and there might be other players buying packages at the same time. If they get processed before you, the price will have gone up and the amount send in your transaction won't be enough to buy the selected amount of packages. "Prioritise transaction" adds 0.01 ETH to your transaction to prevent this from happening.</p>
+                                            <p>Each time a package is sold, the price of a package increases slightly. When you send a transaction to the network, you end up in a que and there might be other players buying packages at the same time. If they get processed before you, the price will have gone up and the amount send in your transaction won't be enough to buy the selected amount of packages. "Prioritise transaction" adds 0.001 ETH to your transaction to prevent this from happening.</p>
                                             <p>All unused funds will be refunded to your wallet. We will never keep any access ETH sent to our contracts.</p>
                                         </div>
                                     </div> 

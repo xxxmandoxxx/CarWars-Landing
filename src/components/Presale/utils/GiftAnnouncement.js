@@ -7,7 +7,7 @@ const giftAnnouncement = (props) => {
             <AccouncementWrapper>
                 <div className="giftAnnouncement">
                     <div className="giftAnnouncement-text">
-                        Wow! Someone has given you a gift. You have {props.gifts} gifts waiting for you. Please claim them now.
+                        Wow! Someone has given you a gift. You have {props.gifts} gifts waiting for you. Please claim them now:
                     </div>
                     <div className="giftAnnouncement-button">
                     <button onClick={props.claimPkgs} ref={props.claimRef} >CLAIM NOW</button>

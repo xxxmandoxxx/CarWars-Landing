@@ -1,6 +1,7 @@
 import React from 'react';
 
-import blueprint from '../img/blueprint.png'
+import blueprint from '../img/blueprint.png';
+import {Link} from 'react-router-dom';
 
 const presalePanelWrapper = (props) => {
     return(
@@ -16,7 +17,10 @@ const presalePanelWrapper = (props) => {
                             </div>
                             <div className="presale-panel-bottom animated fadeIn">
                                 <div>
-                                As a presale participant, you receive 3x blueprints per package. Each blueprint equates to a vehicle in Car Wars, and yours contains a feature that will never be repeated.  Don't delay, supply is strictly limited
+                                As a presale participant, you receive 3x blueprints per package. Each blueprint equates to a vehicle in Car Wars, and yours contains a feature that will never be repeated.  Don't delay, supply is strictly limited.
+                                </div>
+                                <div>
+                                <small>By purchasing a Pre-Sale package you agree to our <Link to="/terms" className="txLink">Terms of User</Link>.</small>
                                 </div>
                             </div>
                         </div>
