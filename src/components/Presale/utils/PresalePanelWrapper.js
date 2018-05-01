@@ -20,7 +20,7 @@ const presalePanelWrapper = (props) => {
                                 As a presale participant, you receive 3x blueprints per package. Each blueprint equates to a vehicle in Car Wars, and yours contains a feature that will never be repeated.  Don't delay, supply is strictly limited.
                                 </div>
                                 <div>
-                                <small>By purchasing a Pre-Sale package you agree to our <Link to="/terms" className="txLink">Terms of User</Link>.</small>
+                                <small>By purchasing a Pre-Sale package you agree to our <Link to="/terms" className="txLink">Terms of Use</Link>.</small>
                                 </div>
                             </div>
                         </div>

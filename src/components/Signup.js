@@ -31,9 +31,9 @@ class Signup extends React.Component {
     render() {
     return (
         <div className="signup-box animated fadeIn">
-        <p className="sub-title">Gain exclusive access to the first builds of the newly discovered ancient machines</p>
+         <JoinPresale />
             <div id="mc_embed_signup">
-                <JoinPresale />
+               
                 <form onSubmit={this.handleSubmit} name="SignUp">
                     <div id="mc_embed_signup_scroll">
                         <div>
@@ -55,7 +55,7 @@ class Signup extends React.Component {
                         
                     </div>
                 </form>
-               
+                <p className="sub-title">Sign up to receive updates and other relevant information about CarWars.cc</p>
             </div>
         </div>
     )

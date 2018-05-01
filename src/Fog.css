@@ -1,4 +1,14 @@
-@media screen and (min-width: 800px) {
+
+
+.FogContainer {
+  position: absolute;
+    top: 50;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow: hidden;
+}
+
 .fogwrapper {
     height: 00%;
     width: 100%;
@@ -58,7 +68,7 @@
     height: 200%;
     float: left;
   }
-}
+
   
   @keyframes foglayer_01_opacity {
     0% {

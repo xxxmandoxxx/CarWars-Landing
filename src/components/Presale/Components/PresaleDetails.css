@@ -6,6 +6,7 @@
     padding: 5px 25px 0px 25px;
     border-radius: 5px;
     line-height: 20pt;
+    text-align: left;
    /** background-color: rgba(86, 162, 253, 0.1) **/
 }
 
@@ -58,10 +59,30 @@
 }
 
 .content-factory {
-    padding-bottom: 25px;
+    
     padding-left: 50px;
     padding-right: 50px;
 }
+
+/*.presaledetails-Factory {
+    position: relative;
+    /* margin-top: -25px; 
+    margin-left: -25px;
+    margin-right: -25px;
+    padding-top: 1px;
+}
+
+.presaledetails-Factory::after {
+    content: "";
+    background: url("../img/testing_abstract.jpg");
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }*/
 
 .hiddenBottom {
     display: none;
@@ -70,6 +91,24 @@
 .hiddenTop {
     display: block;
 }
+
+.header-roadmap {
+    margin-top: 25px;
+
+}
+
+.RoadMapImg {
+    margin-top: 100px;
+    width: 100%;
+    /** animation: enter 1s, hoveringRoadMap 3s infinite; **/
+}
+
+
+[id^=SquareDetails]:hover {
+    fill:  rgb(86, 162, 253);
+    box-shadow: 0px 0px 10px 3px white;
+}
+
 
 @media only screen and (max-width: 991px) {
     .image-container-odd, .image-container-even {
@@ -95,5 +134,26 @@
     
     .hiddenTop {
         display: none;
+    }
+}
+
+@keyframes hoveringRoadMap {
+    0% {
+        padding-top: 0px;
+        padding-bottom: 10px;
+        
+    }
+
+
+    50% {
+        padding-top: 10px;
+        padding-bottom: 0px;
+    
+    
+    }
+
+    100% {
+        padding-top: 0px;
+        padding-bottom: 10px;
     }
 }

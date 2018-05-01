@@ -1,5 +1,6 @@
 .PresaleForm {
     z-index: 800;
+    margin-bottom: 50px;
 }
 
 .presale-panel{
@@ -108,7 +109,9 @@
 .backToTop {
     text-align: center;
     margin-bottom: 25px;
+    margin-top: 25px;
 }
+
 
 
 @keyframes hovering {

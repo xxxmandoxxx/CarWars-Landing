@@ -43,5 +43,6 @@ export const ABOUTTEXT = <div>
     Like all other crypto-assets (ERC721) you are the owner, free to do what you want with them.</p>
     <p>Improving your asset is up to you, but you can't buy your way to the top. You'll need knowledge, skill, 
     and nerves of steel. Challenge others to get ahead, but pick your battles wisely because the consequences can be devastating.</p>
+    {PRESALEDETAILSTEXT}
 </div>
 

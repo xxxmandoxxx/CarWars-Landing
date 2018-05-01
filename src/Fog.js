@@ -2,7 +2,7 @@ import React from 'react';
 
 const fog = (props) => {
     return(
-        <div>
+        <div className="FogContainer">
             <div id="foglayer_01" className="fog">
                 <div className="image01"></div>
                 <div className="image02"></div>

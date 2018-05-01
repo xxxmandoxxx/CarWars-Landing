@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './Nav.css';
 import App from './App';
-import About from './About';
 import PresaleContainer from './PresaleContainer';
 import MyAccount from './components/MyAccount/MyAccountContainer';
 import Error404 from './Error404';
@@ -51,7 +50,6 @@ ReactDOM.render(
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ml-auto">
                         <li className="nav-item nav-link"><NavLink exact to="/" activeClassName="nav-active active" >Home</NavLink></li>
-                        <li className="nav-item nav-link"><NavLink exact to="/about" activeClassName="nav-active active">About</NavLink></li>
                         <li className="nav-item nav-link"><NavLink exact to="/presale" activeClassName="nav-active active">Pre-Sale</NavLink></li>
                         <li className="nav-item nav-link"><NavLink exact to="/myAccount" activeClassName="nav-active active">My Account</NavLink></li>
                         <li className="nav-item nav-link"><NavLink exact to="/faq" activeClassName="nav-active active">FAQ</NavLink></li>
@@ -61,7 +59,6 @@ ReactDOM.render(
 
         <Switch>
             <Route exact path="/" component={App}/>
-            <Route path="/about" component={About}/>
             <Route path="/presale" component={PresaleContainer}/>
             <Route path="/myAccount" component={MyAccount}/>
             <Route path="/faq" component={Faq}/>
@@ -69,7 +66,7 @@ ReactDOM.render(
             <Route component={Error404} />
         </Switch>
         <Switch>
-            <Route exact path="/about" component={Footer}/>
+            <Route exact path="/" component={Footer}/> 
             <Route exact path="/presale" component={Footer}/>
             <Route exact path="/myAccount" component={Footer}/>
             <Route exact path="/faq" component={Footer}/>

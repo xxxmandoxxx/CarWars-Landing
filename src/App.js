@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import ThankYou from './components/ThankYou';
 import Main from './components/Main';
 import Fog from './Fog';
+import PresaleDetails from './components/Presale/Components/PresaleDetails';
 
 
 import ReactGA from 'react-ga';
@@ -17,15 +18,23 @@ class App extends Component {
   
    state = {
      is_registered: false,
-     showStory: false
+     showStory: false,
+     animated: false
   };
+
+ 
+carClickHandler = (event) => {
+    event.preventDefault();
+    const animated = this.state.animated
+    this.setState({animated: !animated})
+}
   
   componentDidMount () {
-    document.body.style.overflow = "hidden";
+    //document.body.style.overflow = "hidden";
   }
 
   componentWillUnmount () {
-    document.body.style.overflow = "visible";
+    //document.body.style.overflow = "visible";
   }
 
   regDone() {
@@ -51,10 +60,8 @@ class App extends Component {
         <div className="container">
           <Fog />
           {view}
-          <div className="fixed-bottom">
-            <Footer />
-          </div>
         </div>
+        <PresaleDetails site="About" animated={this.state.animated} clickImage={this.carClickHandler}/> 
       </div>
     );
   }

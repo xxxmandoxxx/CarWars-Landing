@@ -173,10 +173,7 @@ class Presale extends Component {
                 packagesOwned={this.packagesOwned.bind(this)}
                 skip={this.skipLoading.bind(this)}/>
                 
-                <PresaleDetails />
-                <div className="backToTop">
-                    <button onClick={this.backToTopHandler} className="btn btn-primary ml-auto">Back to Top</button>
-                </div>
+               
             </div>)
         }
         
